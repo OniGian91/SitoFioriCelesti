@@ -47,20 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Dropdown toggle for mobile
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.dropdown');
-    
-    if (dropdownToggle && dropdown) {
-        dropdownToggle.addEventListener('click', function(e) {
-            // Only toggle on mobile (check if menu toggle is visible)
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    }
 });
 
 // ===================================
