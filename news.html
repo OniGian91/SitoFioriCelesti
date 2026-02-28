@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Fiori Celesti APS</title>
+    <link rel="icon" href="imgs/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="imgs/logo.jpg" alt="Fiori Celesti APS Logo">
+                    <span class="logo-text">Fiori Celesti APS</span>
+                </a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="index.html#attivita" class="dropdown-toggle">
+                                Attività <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="attivita/falegnameria.html">Falegnameria</a></li>
+                                <li><a href="attivita/cioccolateria.html">Cioccolateria</a></li>
+                                <li><a href="attivita/gelateria.html">Gelateria</a></li>
+                                <li><a href="attivita/orticoltura.html">Orticoltura</a></li>
+                                <li><a href="attivita/qigong.html">Qigong</a></li>
+                                <li><a href="attivita/ceramica.html">Ceramica</a></li>
+                                <li><a href="attivita/pittura.html">Pittura</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#contatti">Contatti</a></li>
+                        <li><a href="news.html" class="active">News</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Ultime News</h1>
+            <p>Resta aggiornato sulle nostre attività, eventi e novità</p>
+        </div>
+    </section>
+
+    <!-- News Feed -->
+    <section class="news-feed">
+        <div class="container">
+            <div class="news-container">
+                <!-- News Item 1 -->
+                <article class="news-item">
+                    <div class="news-header">
+                        <div class="news-author">
+                            <img src="imgs/logo.jpg" alt="Fiori Celesti APS">
+                            <div class="author-info">
+                                <h4>Fiori Celesti APS</h4>
+                                <span class="news-date">
+                                    <i class="far fa-calendar"></i> 21 Gennaio 2026
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Ecco la nostra intervista alla Fiera SIGEP per FOOD PROFESSIONAL NETWORK</h3>
+                        
+                        <p>SPLENDIDA GIORNATA A RIMINI SIGEP WORLD 2026 - Fiera Mondiale di Gelateria, Cioccolateria, Pasticceria, Pizza e Panificazione.</p>
+                        
+                        <p>Grazie a tutti i volontari che hanno contribuito alla buona riuscita di questa bella giornata! Ad Assunta, Dante, Reana, Manuela e Sara!</p>
+                        
+                        <p>Un ringraziamento speciale ai maestri Giuliano e Gino per averci permesso di contemplare tanta bellezza e incontrare tanti imprenditori che sicuramente aiuteranno Fiori Celesti!</p>
+                        
+                        <p>Grazie ai ragazzi per il loro entusiasmo sempre genuino!</p>
+                        
+                        <!-- Facebook Video Embed -->
+                        <div class="news-video">
+                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1552315626001309&show_text=false&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="news-item">
+                    <div class="news-header">
+                        <div class="news-author">
+                            <img src="imgs/logo.jpg" alt="Fiori Celesti APS">
+                            <div class="author-info">
+                                <h4>Fiori Celesti APS</h4>
+                                <span class="news-date">
+                                    <i class="far fa-calendar"></i> 27 Novembre 2025
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3>🚌 Ecco arrivato il pulmino Fiori Celesti! Oggi viaggio inaugurale e benedizione in piazza a Tabiano! 💙</h3>
+                        
+                        <p>Tanta partecipazione all'evento di benedizione del presepe! Molte associazioni, famiglie, ragazzi e tanta energia di rinnovamento!</p>
+                        
+                        <p>Grazie a don Bogdan, al Sindaco di Salsomaggiore Luca Musile Tanzi, alla Proloco Amici di Tabiano, agli Alpini di Tabiano e Salsomaggiore, alle Associazioni Why Not?, Il Cortile, Il Sole, al Consorzio ABITABIANO, a tutti i volontari, ai ragazzi, alle famiglie e a tutti i presenti 💙</p>
+                        
+                        <!-- Photo Carousel -->
+                        <div class="news-carousel">
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev" id="news1CarouselPrev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="carousel-track" id="news1CarouselTrack">
+                                    <div class="carousel-slide active">
+                                        <img src="imgs/news/1/1.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/2.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/3.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/4.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/5.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/6.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/1/7.jpg" alt="Pulmino Fiori Celesti">
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next" id="news1CarouselNext">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots" id="news1CarouselDots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                                <span class="dot" data-slide="3"></span>
+                                <span class="dot" data-slide="4"></span>
+                                <span class="dot" data-slide="5"></span>
+                                <span class="dot" data-slide="6"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="news-item">
+                    <div class="news-header">
+                        <div class="news-author">
+                            <img src="imgs/logo.jpg" alt="Fiori Celesti APS">
+                            <div class="author-info">
+                                <h4>Fiori Celesti APS</h4>
+                                <span class="news-date">
+                                    <i class="far fa-calendar"></i> 10 Novembre 2025
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Grande successo dell'inaugurazione della Casa Laboratorio!</h3>
+                        <p>Ringraziamo innanzitutto la Pro Loco Amici di Tabiano, in primis il presidente Giuseppe Gorreri, che grazie al supporto datoci e all'eccezionale Festa del Ringraziamento organizzata ieri a Tabiano, hanno contribuito a dare ampia partecipazione a visibilità al nostro evento!</p>
+                        
+                        <p>Ringraziamo sentitamente tutti i presenti e in particolar modo il vescovo Ovidio Vezzoli, don Bogdan, don Ubaldo, il rev. Fausto Taiten Guareschi, il rev. Maurizio Anshu Ferro, il sindaco Musile Tanzi, l'assessore Volpicelli, i consiglieri Filippo Fantoni, Andrea Davighi, Laura Gerra, Michele Gandolfi e Anna Pedretti.</p>
+                        
+                        <p>Un particolare ringraziamento va al signor Gianluigi Emanuelli per la donazione del locale diventato sede permanente della Casa Laboratorio di Tabiano e alla signora Nicoletta Cosenza per la messa a disposizione del locale adiacente, raddoppiando gli spazi disponibili per i laboratori.</p>
+                        
+                        <p>Un grande ringraziamento va agli instancabili volontari e sostenitori di Fiori Celesti: la vice responsabile Manuela Fiscarelli, i maestri gelatieri Giuliano Curati e Gino Fratini, il maestro pasticcere Claudio Gatti, la psicologa Marica Barbieri, la geometra Silvia Gatti, la commercialista Marisa Benzi, il maestro ceramista Stefano Fedolfi, la presidente della Consulta del Volontariato Nicoletta Mestieri, il dottor Pasquale Gerace, i volontari Matteo, Giulia, Andi, Reana, Assunta, Augusta, Fabrizio, Nicola, Luana, Manuela, Paolo, Fausto, Sara, Anna, Raffaele e a tutti coloro che hanno collaborato all'ottima riuscita dell'importante evento!</p>
+                        
+                        <p>Un grazie anche a Mara e a Monia del gruppo Komyo Reiki Do di Lodi, a Elena del Circolo Zoom per le foto, agli amici della cooperativa Il Cortile, della struttura Il Sole, agli amici dell'AIK Milano e ai più di 100 presenti all'inaugurazione!</p>
+                        
+                        <p>L'evento ci ha permesso anche di raccogliere i primi fondi per l'acquisto del pulmino Fiori Celesti.</p>
+                        
+                        <p><strong>Un altro passo in avanti per tutti!</strong></p>
+                        
+                        <!-- Photo Carousel -->
+                        <div class="news-carousel">
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev" id="news2CarouselPrev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="carousel-track" id="news2CarouselTrack">
+                                    <div class="carousel-slide active">
+                                        <img src="imgs/news/2/1.jpg" alt="Inaugurazione Casa Laboratorio">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/2/2.jpg" alt="Inaugurazione Casa Laboratorio">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/2/3.jpg" alt="Inaugurazione Casa Laboratorio">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/2/4.jpg" alt="Inaugurazione Casa Laboratorio">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/2/5.jpg" alt="Inaugurazione Casa Laboratorio">
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next" id="news2CarouselNext">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots" id="news2CarouselDots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                                <span class="dot" data-slide="3"></span>
+                                <span class="dot" data-slide="4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fiori Celesti APS</h4>
+                    <p>Associazione di promozione sociale dedicata al benessere e alla crescita della comunità.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61559448013717" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fiori Celesti APS. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
