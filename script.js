@@ -50,6 +50,68 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===================================
+// Scrolling Texts Animation (About Section)
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    const textGroups = document.querySelectorAll('.text-group');
+    if (textGroups.length > 0) {
+        let currentTextIndex = 0;
+        
+        function switchText() {
+            textGroups.forEach(group => group.classList.remove('active'));
+            currentTextIndex = (currentTextIndex + 1) % textGroups.length;
+            textGroups[currentTextIndex].classList.add('active');
+        }
+        
+        // Change text every 4 seconds
+        setInterval(switchText, 4000);
+    }
+});
+
+// ===================================
+// About Section Carousel
+// ===================================
+let currentAboutSlide = 0;
+const aboutSlides = document.querySelectorAll('.carousel-slide-about');
+const aboutPrevBtn = document.getElementById('aboutPrevBtn');
+const aboutNextBtn = document.getElementById('aboutNextBtn');
+
+function showAboutSlide(n) {
+    if (!aboutSlides.length) return;
+    
+    if (n >= aboutSlides.length) currentAboutSlide = 0;
+    if (n < 0) currentAboutSlide = aboutSlides.length - 1;
+    
+    aboutSlides.forEach(slide => slide.classList.remove('active'));
+    aboutSlides[currentAboutSlide].classList.add('active');
+}
+
+function nextAboutSlide() {
+    currentAboutSlide++;
+    showAboutSlide(currentAboutSlide);
+}
+
+function prevAboutSlide() {
+    currentAboutSlide--;
+    showAboutSlide(currentAboutSlide);
+}
+
+if (aboutPrevBtn) {
+    aboutPrevBtn.addEventListener('click', prevAboutSlide);
+}
+
+if (aboutNextBtn) {
+    aboutNextBtn.addEventListener('click', nextAboutSlide);
+}
+
+// Auto-advance about carousel every 5 seconds
+if (aboutSlides.length > 0) {
+    setInterval(() => {
+        nextAboutSlide();
+    }, 5000);
+}
+
+// ===================================
 // Smooth Scrolling for Anchor Links
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -179,7 +241,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item');
+    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item, .section-header, .chi-siamo-content');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
