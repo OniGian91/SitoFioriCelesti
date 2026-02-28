@@ -47,6 +47,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ===================================
+    // Scroll Animations for Activities
+    // ===================================
+    const activityShowcases = document.querySelectorAll('.activity-showcase');
+    
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    activityShowcases.forEach(showcase => {
+        observer.observe(showcase);
+    });
 });
 
 // ===================================
@@ -109,6 +132,34 @@ if (aboutSlides.length > 0) {
     setInterval(() => {
         nextAboutSlide();
     }, 5000);
+}
+
+// ===================================
+// Team Carousel
+// ===================================
+let currentTeamGroup = 0;
+const teamGroups = document.querySelectorAll('.team-group');
+
+function showTeamGroup(n) {
+    if (!teamGroups.length) return;
+    
+    if (n >= teamGroups.length) currentTeamGroup = 0;
+    if (n < 0) currentTeamGroup = teamGroups.length - 1;
+    
+    teamGroups.forEach(group => group.classList.remove('active'));
+    teamGroups[currentTeamGroup].classList.add('active');
+}
+
+function nextTeamGroup() {
+    currentTeamGroup++;
+    showTeamGroup(currentTeamGroup);
+}
+
+// Auto-advance team carousel every 6 seconds
+if (teamGroups.length > 1) {
+    setInterval(() => {
+        nextTeamGroup();
+    }, 6000);
 }
 
 // ===================================
@@ -588,6 +639,30 @@ if (news2Slides.length > 0) {
     setInterval(() => {
         nextNews2Slide();
     }, 5000);
+}
+
+// ===================================
+// Accordion Toggle
+// ===================================
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const isActive = header.classList.contains('active');
+    
+    // Close all other accordions in the same section
+    const section = header.closest('.activities-list, .schedule-section');
+    if (section) {
+        const allHeaders = section.querySelectorAll('.accordion-header');
+        const allContents = section.querySelectorAll('.accordion-content');
+        
+        allHeaders.forEach(h => h.classList.remove('active'));
+        allContents.forEach(c => c.classList.remove('active'));
+    }
+    
+    // Toggle current accordion
+    if (!isActive) {
+        header.classList.add('active');
+        content.classList.add('active');
+    }
 }
 
 // ===================================
