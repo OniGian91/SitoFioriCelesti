@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
             textGroups[currentTextIndex].classList.add('active');
         }
         
-        // Change text every 4 seconds
-        setInterval(switchText, 4000);
+        // Change text every 5 seconds
+        setInterval(switchText, 5000);
     }
 });
 
@@ -292,7 +292,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item, .section-header, .chi-siamo-content');
+    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item, .section-header, .team-member, .project-showcase, .contact-item, .map-container, .chi-siamo-image, .chi-siamo-text, .activities-intro-image, .activities-intro-text, .activity-description, .donation-card, .donation-info-box');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';

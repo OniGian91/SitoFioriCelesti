@@ -101,8 +101,8 @@ function loadProject() {
     // Aggiorna il titolo della pagina
     document.getElementById('page-title').textContent = `${project.title} - Fiori Celesti APS`;
     
-    // Aggiorna il titolo principale con l'icona
-    document.getElementById('project-title').innerHTML = `<i class="fas ${project.icon}"></i> ${project.title}`;
+    // Aggiorna il titolo principale senza icona
+    document.getElementById('project-title').textContent = project.title;
     
     // Aggiorna la descrizione breve
     document.getElementById('project-description').innerHTML = `
@@ -121,6 +121,13 @@ function loadProject() {
         slide.innerHTML = `<img src="imgs/progetti/${project.folder}/${i}.jpg" alt="${project.title} ${i}">`;
         carouselTrack.appendChild(slide);
     }
+    
+    // Aggiungi l'icona badge al carosello
+    const carouselContainer = document.querySelector('.carousel-container-about');
+    const iconBadge = document.createElement('div');
+    iconBadge.className = 'activity-icon-badge';
+    iconBadge.innerHTML = `<i class="fas ${project.icon}"></i>`;
+    carouselContainer.appendChild(iconBadge);
     
     // Carica le immagini fixed (ultime 2 del carosello)
     const fixedIndex1 = Math.max(1, project.carouselImages - 1);

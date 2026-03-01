@@ -52,6 +52,11 @@ ul {
     list-style: none;
 }
 
+/* Scroll offset for anchor links with sticky header */
+section[id] {
+    scroll-margin-top: 130px;
+}
+
 /* ===================================
    Header & Navigation
    =================================== */
@@ -126,33 +131,33 @@ ul {
 }
 
 .btn-donate {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--secondary-color), #ff6b7a);
     color: white !important;
     padding: 0.6rem 1.5rem !important;
     border-radius: 25px;
     font-weight: 600;
     border: none;
-    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
     transition: var(--transition);
     border-bottom: none !important;
 }
 
 .btn-donate:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 154, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
     border-bottom: none !important;
 }
 
 .btn-donate-mobile {
     display: none;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, var(--secondary-color), #ff6b7a);
     color: white !important;
     padding: 0.5rem 1rem !important;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     border: none;
-    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
     transition: var(--transition);
     border-bottom: none !important;
     text-decoration: none;
@@ -160,7 +165,7 @@ ul {
 
 .btn-donate-mobile:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 154, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
     border-bottom: none !important;
 }
 
@@ -247,10 +252,19 @@ ul {
     box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
 }
 
+.btn-primary i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
     background: #ff6b7a;
+}
+
+.btn-primary:hover i {
+    transform: translateX(5px);
 }
 
 .btn-secondary {
@@ -319,6 +333,7 @@ ul {
     color: var(--primary-color);
     margin-bottom: 2rem;
     font-weight: bold;
+    animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .activity-description {
@@ -333,6 +348,7 @@ ul {
     height: 220px;
     margin-bottom: 2rem;
     overflow: hidden;
+    animation: fadeIn 0.8s ease 0.4s both;
 }
 
 .text-group {
@@ -378,6 +394,7 @@ ul {
     gap: 0.8rem;
     margin-top: 1.5rem;
     justify-content: flex-start;
+    animation: fadeInUp 0.8s ease 0.6s both;
 }
 
 .cta-buttons .btn {
@@ -391,20 +408,27 @@ ul {
     position: relative;
 }
 
+.mobile-activity-button {
+    display: none;
+}
+
 /* Carosello About */
 .carousel-container-about {
     position: relative;
     width: 100%;
     height: 400px;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: var(--shadow-lg);
+    animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .carousel-track-about {
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .carousel-slide-about {
@@ -436,6 +460,7 @@ ul {
     position: relative;
     z-index: 10;
     transform: translateY(140px);
+    animation: fadeIn 0.8s ease 0.5s both;
 }
 
 .fixed-image {
@@ -493,12 +518,42 @@ ul {
     align-items: center;
 }
 
-.chi-siamo-image img {
+.chi-siamo-image {
+    position: relative;
+}
+
+.carousel-container-chisiamo {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track-chisiamo {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-slide-chisiamo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide-chisiamo.active {
+    position: relative;
+    opacity: 1;
+}
+
+.carousel-slide-chisiamo img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .chi-siamo-text p {
@@ -537,7 +592,7 @@ ul {
    Team Section
    =================================== */
 .team-section {
-    padding: 3rem 0 5rem 0;
+    padding: 3rem 0 2rem 0;
     background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
     overflow: hidden;
 }
@@ -614,9 +669,20 @@ ul {
 }
 
 .activities-intro {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto 4rem;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.activities-intro-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .activities-intro h3 {
@@ -625,11 +691,64 @@ ul {
     margin-bottom: 1.5rem;
 }
 
+.activities-intro-text p,
 .activities-intro p {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.2rem;
     text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* Activities CTA Section */
+.activities-cta {
+    margin-top: 3rem;
+}
+
+.activities-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.activity-preview-card {
+    background: white;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.activity-preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-color: var(--accent-color);
+}
+
+.activity-preview-card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.activity-preview-card h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.cta-center {
+    text-align: center;
+}
+
+.btn-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .activity-showcase {
@@ -641,6 +760,12 @@ ul {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.activity-showcase.alt-bg {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    border-radius: 10px;
 }
 
 .activity-showcase.visible {
@@ -692,7 +817,23 @@ ul {
     z-index: 10;
 }
 
-.activity-image .activity-icon-badge i {
+.carousel-container-about .activity-icon-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(76, 154, 255, 0.5);
+    z-index: 100;
+}
+
+.activity-image .activity-icon-badge i,
+.carousel-container-about .activity-icon-badge i {
     color: white;
     font-size: 1.8rem;
 }
@@ -718,16 +859,6 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-}
-
-.activity-content .btn:after {
-    content: "→";
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-}
-
-.activity-content .btn:hover:after {
-    transform: translateX(5px);
 }
 
 .activity-category {
@@ -773,6 +904,14 @@ ul {
     border-radius: 15px;
     box-shadow: var(--shadow);
     align-items: center;
+}
+
+.project-showcase.reverse {
+    direction: rtl;
+}
+
+.project-showcase.reverse > * {
+    direction: ltr;
 }
 
 .project-image {
@@ -1651,6 +1790,8 @@ ul {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 1200px;
 }
 
 /* ===================================
@@ -1658,12 +1799,14 @@ ul {
    =================================== */
 .contact {
     padding: 5rem 0;
-    background: var(--light-color);
+    background: white;
 }
 
 .contact-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
 .contact-info {
@@ -1915,6 +2058,8 @@ ul {
     margin: 0 0 1rem 0;
     border-radius: 50%;
     object-fit: cover;
+    background: white;
+    padding: 5px;
 }
 
 .footer-brand h3 {
@@ -2284,6 +2429,12 @@ ul {
         display: none;
     }
 
+    .mobile-activity-button {
+        display: block;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
     .carousel-container-about {
         height: 300px;
     }
@@ -2306,6 +2457,28 @@ ul {
 
     .activities-intro p {
         text-align: left;
+    }
+
+    .activities-grid-preview {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .activity-preview-card {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .activity-preview-card i {
+        font-size: 2.5rem;
+    }
+
+    .activity-preview-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
     }
 
     .activity-showcase {
@@ -2357,6 +2530,11 @@ ul {
     }
 
     .chi-siamo-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .activities-intro {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -2556,7 +2734,7 @@ ul {
    Donation Page Styles
    =================================== */
 .donation-methods {
-    padding: 4rem 0;
+    padding:10rem 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
 }
 

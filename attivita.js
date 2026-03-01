@@ -97,8 +97,8 @@ function loadActivity() {
     // Aggiorna il titolo della pagina
     document.getElementById('page-title').textContent = `${activity.title} - Fiori Celesti APS`;
     
-    // Aggiorna il titolo principale con l'icona
-    document.getElementById('activity-title').innerHTML = `<i class="fas ${activity.icon}"></i> ${activity.title}`;
+    // Aggiorna il titolo principale senza icona
+    document.getElementById('activity-title').textContent = activity.title;
     
     // Aggiorna le descrizioni
     document.getElementById('activity-description-1').textContent = activity.description1;
@@ -114,6 +114,13 @@ function loadActivity() {
         slide.innerHTML = `<img src="imgs/attivita/${activity.folder}/${i}.jpg" alt="${activity.title} ${i}">`;
         carouselTrack.appendChild(slide);
     }
+    
+    // Aggiungi l'icona badge al carosello
+    const carouselContainer = document.querySelector('.carousel-container-about');
+    const iconBadge = document.createElement('div');
+    iconBadge.className = 'activity-icon-badge';
+    iconBadge.innerHTML = `<i class="fas ${activity.icon}"></i>`;
+    carouselContainer.appendChild(iconBadge);
     
     // Carica le immagini fixed (ultime 2 del carosello)
     const fixedIndex1 = Math.max(1, activity.carouselImages - 1);

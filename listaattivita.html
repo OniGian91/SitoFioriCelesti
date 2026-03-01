@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiori Celesti APS</title>
+    <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="imgs/logo.png" alt="Fiori Celesti APS Logo">
+                    <span class="logo-text">Fiori Celesti APS</span>
+                </a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+                        <li><a href="listaattivita.html" class="active">Attività</a></li>
+                        <li><a href="index.html#progetti">Progetti</a></li>
+                        <li><a href="index.html#contatti">Contatti</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="donazioni.html" class="btn-donate">Dona ora</a></li>
+                    </ul>
+                </nav>
+                <a href="donazioni.html" class="btn-donate-mobile">Dona</a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Activities Section -->
+    <section class="activities" id="attivita">
+        <div class="container">
+            <div class="section-header">
+                <h2>Il progetto "Ama et Labora"</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="activities-intro">
+                <div class="activities-intro-image">
+                    <img src="imgs/logo2.jpg" alt="Ama et Labora">
+                </div>
+                <div class="activities-intro-text">
+                    <p>Il progetto "Ama et Labora" nasce più di 10 anni fa nel monastero zen di Bargone, in collaborazione con diversi enti ed associazioni. Il monaco zen Carmine Shinkō De Rosario, grazie anche all'esperienza ventennale nell'ambito dell'educazione psicomotoria, crea un approccio didattico che vede ampiamente utilizzati i linguaggi del lavoro manuale, dell'artigianato, dell'arte e della cura collettiva di luoghi come giardini e luoghi condivisi.</p>
+                    <p>Centinaia di ragazzi e ragazze, sono stati coinvolti in questi anni in attività come falegnameria, cura del giardino e lavoro nell'orto. Non sono mancati negli incontri settimanali e nei campi estivi residenziali i linguaggi legati alle arti zen come shōdō (calligrafia giapponese), qigong (yoga cinese), taiko (tamburo), arti marziali e meditazione.</p>
+                    <p>L'implicazione esperienziale in queste attività diventa un "lavoro" fatto sulla materia e su noi stessi. Il lavoro, qui inteso come nobile opera che riqualifica il senso della vita umana, diventa spazio, tempo, linguaggio di scambio simbolico. Agire insieme agli altri, lavorare con intelligenza e senso estetico aiuta a riconnettersi agli scenari interiori ed esteriori dello scorrere della vita.</p>
+                </div>
+            </div>
+
+            <!-- Falegnameria -->
+            <div class="activity-showcase">
+                <div class="activity-image">
+                    <img src="imgs/attivita/falegnameria/1.jpg" alt="Falegnameria">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Falegnameria</h3>
+                    <p>Laboratori pratici per imparare l'arte della lavorazione del legno. Un'esperienza che unisce manualità, creatività e la soddisfazione di creare oggetti unici con le proprie mani.</p>
+                    <a href="attivita.html?nome=falegnameria" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Cioccolateria -->
+            <div class="activity-showcase reverse alt-bg">
+                <div class="activity-image">
+                    <img src="imgs/attivita/cioccolateria/1.jpg" alt="Cioccolateria">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Cioccolateria</h3>
+                    <p>Corsi per creare deliziose creazioni al cioccolato artigianale. Impara le tecniche di lavorazione del cioccolato e crea dolci unici e raffinati.</p>
+                    <a href="attivita.html?nome=cioccolateria" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Orticoltura -->
+            <div class="activity-showcase">
+                <div class="activity-image">
+                    <img src="imgs/attivita/orticoltura/1.jpg" alt="Orticoltura">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Orticoltura</h3>
+                    <p>Coltivazione biologica e cura dell'orto in un ambiente naturale. Connettiti con la terra e impara i segreti di una coltivazione sostenibile e rispettosa.</p>
+                    <a href="attivita.html?nome=orticoltura" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Qigong -->
+            <div class="activity-showcase reverse alt-bg">
+                <div class="activity-image">
+                    <img src="imgs/attivita/qigong/1.jpg" alt="Qigong">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Qigong (Yoga Cinese)</h3>
+                    <p>Laboratori psicomotori per il benessere fisico e mentale. Pratica antica che armonizza corpo, mente e spirito attraverso movimenti fluidi e meditazione.</p>
+                    <a href="attivita.html?nome=qigong" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Gelateria -->
+            <div class="activity-showcase">
+                <div class="activity-image">
+                    <img src="imgs/attivita/gelateria/1.jpg" alt="Gelateria">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Gelateria</h3>
+                    <p>Corsi per preparare gelato artigianale con ingredienti naturali. Scopri i segreti della gelateria tradizionale e crea gusti unici e genuini.</p>
+                    <a href="attivita.html?nome=gelateria" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Ceramica -->
+            <div class="activity-showcase reverse alt-bg">
+                <div class="activity-image">
+                    <img src="imgs/attivita/ceramica/1.jpg" alt="Ceramica">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>Ceramica</h3>
+                    <p>Corsi di modellazione e decorazione ceramica. Dai forma alla tua creatività lavorando l'argilla e creando opere d'arte uniche.</p>
+                    <a href="attivita.html?nome=ceramica" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Shōdō -->
+            <div class="activity-showcase">
+                <div class="activity-image">
+                    <img src="imgs/attivita/shodo/1.jpg" alt="Shōdō">
+                    <div class="activity-icon-badge">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                </div>
+                <div class="activity-content">
+                    <h3>SHŌDŌ (Calligrafia Giapponese)</h3>
+                    <p>L'arte della calligrafia giapponese insegna disciplina, concentrazione e armonia. Impara a tracciare i caratteri con il pennello, scoprendo la bellezza dell'imperfezione.</p>
+                    <a href="attivita.html?nome=shodo" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Orari Settimanali -->
+            <div class="schedule-section">
+                <h3>Orari</h3>
+                <div class="schedule-grid">
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Lunedì</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Gelateria</p>
+                                    <p class="instructor">con Giuliano Curati</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 15:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div class="activity-slot adulti">
+                                <span class="badge">Adulti</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Gelateria</p>
+                                    <p class="instructor">con Giuliano Curati</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 1 lezione serale/mese</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Martedì</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Qigong (Yoga Cinese)</p>
+                                    <p class="instructor">con Carmine Shinko</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 16:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div class="activity-slot adulti">
+                                <span class="badge">Adulti</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Zazen (Meditazione Zen)</p>
+                                    <p class="instructor">con Carmine Shinko</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 18:00 - 19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Mercoledì</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Falegnameria</p>
+                                    <p class="instructor">con Carmine</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 15:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div class="activity-slot adulti">
+                                <span class="badge">Adulti</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Qigong</p>
+                                    <p class="instructor">con Carmine</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 18:00 - 19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Giovedì</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Cioccolateria</p>
+                                    <p class="instructor">con Manuela Fiscarelli</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 15:00 - 17:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Venerdì</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Gelateria</p>
+                                    <p class="instructor">con Giuliano Curati</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 15:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div class="activity-slot adulti">
+                                <span class="badge">Adulti</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Shodo (Calligrafia Giapponese)</p>
+                                    <p class="instructor">con Maurizio Anshu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-card">
+                        <div class="day-header">
+                            <i class="fas fa-calendar-day"></i>
+                            <h4>Sabato</h4>
+                        </div>
+                        <div class="day-activities">
+                            <div class="activity-slot ragazzi">
+                                <span class="badge">Ragazzi</span>
+                                <div class="activity-info">
+                                    <p class="activity-name">Ceramica</p>
+                                    <p class="instructor">con Stefano Fedolfi</p>
+                                    <p class="time"><i class="fas fa-clock"></i> 10:30 - 12:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="imgs/logo.jpg" alt="Fiori Celesti APS Logo" class="footer-logo">
+                    <h3>Fiori Celesti APS</h3>
+                    <p class="footer-cf">C.F. 91048120348</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61559448013717" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Contatti</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span>Viale Fidenza 12G, Tabiano Bagni (PR)</span></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+393930778678">+39 393 077 8678</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:fioricelestiaps@gmail.com">fioricelestiaps@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Banner -->
+    <div class="copyright-banner">
+        <div class="container">
+            <p>Designed by Gianluca Bellini | &copy; 2026 Fiori Celesti APS. Tutti i diritti riservati.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
