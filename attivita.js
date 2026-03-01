@@ -65,13 +65,19 @@ const activities = {
                 day: "Martedì",
                 target: "Ragazzi",
                 instructor: "Carmine Shinko",
-                time: "16:00 - 17:00"
+                time: "16:00 - 17:00 Qigong (Yoga Cinese) - psicomotoria"
+            },
+            {
+                day: "Martedì",
+                target: "Adulti",
+                instructor: "Carmine Shinko",
+                time: "17:15 - 18:15 Qigong (Yoga Cinese)"
             },
             {
                 day: "Mercoledì",
                 target: "Adulti",
                 instructor: "Carmine Shinko",
-                time: "18:00 - 19:00"
+                time: "Zazen meditazione zen (chiedere informazioni)"
             }
         ]
     },
@@ -95,7 +101,7 @@ const activities = {
                 day: "Lunedì",
                 target: "Adulti",
                 instructor: "Giuliano Curati",
-                time: "1 lezione serale/mese"
+                time: "chiedere informazioni"
             },
             {
                 day: "Venerdì",
@@ -119,7 +125,7 @@ const activities = {
                 day: "Sabato",
                 target: "Ragazzi",
                 instructor: "Stefano Fedolfi",
-                time: "10:30 - 12:00"
+                time: "chiedere informazioni"
             }
         ]
     },
@@ -137,7 +143,7 @@ const activities = {
                 day: "Venerdì",
                 target: "Adulti",
                 instructor: "Maurizio Anshu",
-                time: ""
+                time: "Terzo venerdì del mese - 19:30 - 20:00"
             }
         ]
     },
