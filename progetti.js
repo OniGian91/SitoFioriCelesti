@@ -11,7 +11,7 @@ const projects = {
         icon: "fa-home-heart",
         description: "Il progetto di Comunità Residenziale si basa sull'idea che ogni persona è in viaggio verso la propria realizzazione umana e che può trovare nella vita comunitaria compagni di viaggio e figure di riferimento per sviluppare a pieno le proprie capacità personali e sociali.",
         folder: "comunita",
-        carouselImages: 3,
+        image: "imgs/attivita/comunita/1.jpg",
         fullContent: `
             <div class="project-content">
                 <h3>Il Progetto</h3>
@@ -111,61 +111,13 @@ function loadProject() {
         ${project.description}
     `;
     
-    // Carica le immagini del carosello
-    const carouselTrack = document.getElementById('carousel-track');
-    carouselTrack.innerHTML = '';
-    
-    for (let i = 1; i <= project.carouselImages; i++) {
-        const slide = document.createElement('div');
-        slide.className = `carousel-slide-about${i === 1 ? ' active' : ''}`;
-        slide.innerHTML = `<img src="imgs/progetti/${project.folder}/${i}.jpg" alt="${project.title} ${i}">`;
-        carouselTrack.appendChild(slide);
+    // Carica l'immagine del progetto
+    if (project.image) {
+        document.getElementById('project-image').src = project.image;
     }
-    
-    // Aggiungi l'icona badge al carosello
-    const carouselContainer = document.querySelector('.carousel-container-about');
-    const iconBadge = document.createElement('div');
-    iconBadge.className = 'activity-icon-badge';
-    iconBadge.innerHTML = `<i class="fas ${project.icon}"></i>`;
-    carouselContainer.appendChild(iconBadge);
-    
-    // Carica le immagini fixed (ultime 2 del carosello)
-    const fixedIndex1 = Math.max(1, project.carouselImages - 1);
-    const fixedIndex2 = project.carouselImages;
-    document.getElementById('fixed-img-1').src = `imgs/progetti/${project.folder}/${fixedIndex1}.jpg`;
-    document.getElementById('fixed-img-2').src = `imgs/progetti/${project.folder}/${fixedIndex2}.jpg`;
     
     // Carica il contenuto completo
     document.getElementById('project-full-content').innerHTML = project.fullContent;
-    
-    // Inizializza il carosello dopo aver caricato le immagini
-    initAboutCarousel();
-}
-
-// Funzione per inizializzare il carosello
-function initAboutCarousel() {
-    let currentAboutSlide = 0;
-    const aboutSlides = document.querySelectorAll('.carousel-slide-about');
-    
-    function showAboutSlide(n) {
-        if (!aboutSlides.length) return;
-        
-        if (n >= aboutSlides.length) currentAboutSlide = 0;
-        if (n < 0) currentAboutSlide = aboutSlides.length - 1;
-        
-        aboutSlides.forEach(slide => slide.classList.remove('active'));
-        aboutSlides[currentAboutSlide].classList.add('active');
-    }
-    
-    function nextAboutSlide() {
-        currentAboutSlide++;
-        showAboutSlide(currentAboutSlide);
-    }
-    
-    // Auto-avanzamento ogni 5 secondi
-    if (aboutSlides.length > 1) {
-        setInterval(nextAboutSlide, 5000);
-    }
 }
 
 // Carica il progetto quando la pagina è pronta

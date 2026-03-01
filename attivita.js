@@ -7,8 +7,8 @@ const activities = {
     falegnameria: {
         title: "Falegnameria",
         icon: "fa-hammer",
-        description1: "Il nostro laboratorio di falegnameria offre un'esperienza unica per tutti coloro che desiderano avvicinarsi all'arte della lavorazione del legno. Che tu sia un principiante assoluto o che tu abbia già qualche esperienza, i nostri corsi sono progettati per accompagnarti passo dopo passo nella scoperta di questa antica e affascinante disciplina.",
-        description2: "Disponiamo di un laboratorio completamente attrezzato con tutti gli strumenti necessari per lavorare il legno in sicurezza. I nostri corsi sono aperti a tutti, senza limiti di età.",
+        description1: "Il nostro laboratorio di falegnameria offre un'esperienza unica per tutti coloro che desiderano avvicinarsi all'<strong>arte della lavorazione del legno</strong>. Che tu sia un <strong>principiante assoluto</strong> o che tu abbia già qualche esperienza, i nostri corsi sono progettati per accompagnarti <strong>passo dopo passo</strong> nella scoperta di questa antica e affascinante disciplina.",
+        description2: "Disponiamo di un <strong>laboratorio completamente attrezzato</strong> con tutti gli strumenti necessari per lavorare il legno in <strong>sicurezza</strong>. Guidati da Carmine, educatore esperto, i nostri corsi sono aperti a tutti, <strong>senza limiti di età</strong>.",
         folder: "falegnameria",
         carouselImages: 7,
         galleryImages: 7,
@@ -17,7 +17,7 @@ const activities = {
             {
                 day: "Mercoledì",
                 target: "Ragazzi",
-                instructor: "Carmine",
+                instructor: "Carmine Shinko",
                 time: "15:00 - 17:00"
             }
         ]
@@ -25,11 +25,11 @@ const activities = {
     cioccolateria: {
         title: "Cioccolateria",
         icon: "fa-candy-cane",
-        description1: "Scopri il magico mondo del cioccolato attraverso i nostri laboratori di cioccolateria artigianale. I nostri corsi ti guideranno nella creazione di praline, tavolette e dolci al cioccolato, insegnandoti le tecniche professionali utilizzate dai mastri cioccolatieri.",
-        description2: "Il laboratorio è dotato di attrezzature professionali per la lavorazione del cioccolato. I corsi sono aperti a tutti gli appassionati, dai bambini agli adulti.",
+        description1: "Scopri il <strong>magico mondo del cioccolato</strong> attraverso i nostri laboratori di <strong>cioccolateria artigianale</strong>. I nostri corsi ti guideranno nella creazione di praline, tavolette e dolci al cioccolato, insegnandoti le <strong>tecniche professionali</strong> utilizzate dai mastri cioccolatieri.",
+        description2: "Il laboratorio è dotato di <strong>attrezzature professionali</strong> per la lavorazione del cioccolato. Sotto la <strong>guida esperta di Manuela Fiscarelli</strong>, i corsi sono aperti a tutti gli appassionati, dai bambini agli adulti.",
         folder: "cioccolateria",
-        carouselImages: 6,
-        galleryImages: 6,
+        carouselImages: 8,
+        galleryImages: 8,
         gallerySubtitle: "Scopri il nostro laboratorio di cioccolateria attraverso le immagini",
         schedule: [
             {
@@ -43,22 +43,22 @@ const activities = {
     orticoltura: {
         title: "Orticoltura",
         icon: "fa-seedling",
-        description1: "Scopri il piacere di coltivare la terra con i nostri laboratori di orticoltura biologica. Un'esperienza che unisce il contatto con la natura, l'apprendimento di tecniche agricole sostenibili e la soddisfazione di vedere crescere ciò che hai piantato con le tue mani.",
-        description2: "Disponiamo di un orto biologico dove sperimentiamo metodi di coltivazione naturali e sostenibili. Le attività sono aperte a tutti, dai bambini agli adulti.",
+        description1: "Scopri il piacere di <strong>coltivare la terra</strong> con i nostri laboratori di <strong>orticoltura biologica</strong>. Un'esperienza che unisce il <strong>contatto con la natura</strong>, l'apprendimento di <strong>tecniche agricole sostenibili</strong> e la soddisfazione di vedere crescere ciò che hai piantato con le tue mani.",
+        description2: "Disponiamo di un <strong>orto biologico</strong> dove sperimentiamo <strong>metodi di coltivazione naturali e sostenibili</strong>. Le attività sono aperte a tutti, dai bambini agli adulti.",
         folder: "orticoltura",
-        carouselImages: 6,
-        galleryImages: 6,
+        carouselImages: 9,
+        galleryImages: 9,
         gallerySubtitle: "Scopri il nostro orto e le attività attraverso le immagini",
         schedule: []
     },
     qigong: {
         title: "Qigong",
         icon: "fa-spa",
-        description1: "Il Qigong è un'antica pratica cinese che unisce movimento, respirazione e meditazione per promuovere il benessere fisico, mentale ed emotivo. I nostri corsi offrono un'introduzione accessibile a questa disciplina millenaria, adatta a persone di tutte le età.",
-        description2: "La pratica regolare migliora la flessibilità, l'equilibrio e la coordinazione, riduce lo stress e favorisce il rilassamento profondo. Aperto a tutti, senza limiti di età.",
+        description1: "Il Qigong è un'<strong>antica pratica cinese</strong> che unisce <strong>movimento, respirazione e meditazione</strong> per promuovere il <strong>benessere fisico, mentale ed emotivo</strong>. I nostri corsi offrono un'introduzione accessibile a questa <strong>disciplina millenaria</strong>, adatta a persone di tutte le età.",
+        description2: "Guidati dal <strong>monaco zen Carmine Shinko</strong>, la pratica regolare migliora la <strong>flessibilità, l'equilibrio e la coordinazione</strong>, riduce lo stress e favorisce il <strong>rilassamento profondo</strong>. Aperto a tutti, senza limiti di età.",
         folder: "qigong",
-        carouselImages: 4,
-        galleryImages: 4,
+        carouselImages: 6,
+        galleryImages: 6,
         gallerySubtitle: "Scopri le nostre pratiche di Qigong attraverso le immagini",
         schedule: [
             {
@@ -70,7 +70,7 @@ const activities = {
             {
                 day: "Mercoledì",
                 target: "Adulti",
-                instructor: "Carmine",
+                instructor: "Carmine Shinko",
                 time: "18:00 - 19:00"
             }
         ]
@@ -78,8 +78,8 @@ const activities = {
     gelateria: {
         title: "Gelateria",
         icon: "fa-ice-cream",
-        description1: "Impara a creare il vero gelato artigianale italiano con i nostri corsi di gelateria. Guidati da maestri gelatieri esperti, scoprirai i segreti della mantecazione, del bilanciamento degli ingredienti e della creazione di gusti unici e genuini.",
-        description2: "Il laboratorio è dotato di attrezzature professionali per la produzione del gelato artigianale. I corsi sono aperti a tutti, dai ragazzi agli adulti appassionati.",
+        description1: "Impara a creare il <strong>vero gelato artigianale italiano</strong> con i nostri corsi di gelateria. Guidato dal <strong>maestro gelatiere Giuliano Curati</strong>, scoprirai i segreti della <strong>mantecazione</strong>, del <strong>bilanciamento degli ingredienti</strong> e della creazione di <strong>gusti unici e genuini</strong>.",
+        description2: "Il laboratorio è dotato di <strong>attrezzature professionali</strong> per la produzione del gelato artigianale. I corsi sono aperti a tutti, dai ragazzi agli adulti appassionati.",
         folder: "gelateria",
         carouselImages: 6,
         galleryImages: 6,
@@ -108,11 +108,11 @@ const activities = {
     ceramica: {
         title: "Ceramica",
         icon: "fa-mug-hot",
-        description1: "Scopri il fascino antico della lavorazione dell'argilla con i nostri corsi di ceramica. Dalla modellazione alla decorazione, fino alla cottura in forno, imparerai tutte le fasi necessarie per creare oggetti unici in ceramica.",
-        description2: "Il laboratorio è dotato di torni elettrici, forni per la cottura e una vasta gamma di smalti. I corsi sono aperti a tutti, dai bambini agli adulti.",
+        description1: "Scopri il <strong>fascino antico</strong> della <strong>lavorazione dell'argilla</strong> con i nostri corsi di ceramica. Dalla <strong>modellazione alla decorazione</strong>, fino alla <strong>cottura in forno</strong>, imparerai tutte le fasi necessarie per creare <strong>oggetti unici in ceramica</strong>.",
+        description2: "Il laboratorio è dotato di <strong>torni elettrici, forni per la cottura</strong> e una vasta gamma di smalti. Guidati dal <strong>ceramista Stefano Fedolfi</strong>, i corsi sono aperti a tutti, dai bambini agli adulti.",
         folder: "ceramica",
         carouselImages: 3,
-        galleryImages: 0,
+        galleryImages: 3,
         gallerySubtitle: "Scopri il nostro laboratorio di ceramica attraverso le immagini",
         schedule: [
             {
@@ -126,8 +126,8 @@ const activities = {
     shodo: {
         title: "SHŌDŌ (Calligrafia Giapponese)",
         icon: "fa-brush",
-        description1: "Lo Shōdō (書道, 'via della scrittura') è l'arte tradizionale giapponese della calligrafia. Non è solo tecnica, ma una pratica meditativa che unisce mente, corpo e spirito. Attraverso il pennello, l'inchiostro e la carta di riso, imparerai a tracciare i caratteri giapponesi con presenza e consapevolezza.",
-        description2: "I nostri corsi sono aperti a tutti, dai principianti ai praticanti esperti. Sperimenterai come ogni tratto riveli il tuo stato d'animo, insegnandoti la bellezza dell'imperfezione e l'accettazione del momento presente. Lo Shōdō diventa così un percorso di crescita personale e scoperta interiore.",
+        description1: "Lo Shōdō (書道, '<strong>via della scrittura</strong>') è l'<strong>arte tradizionale giapponese</strong> della calligrafia. Non è solo tecnica, ma una <strong>pratica meditativa</strong> che unisce <strong>mente, corpo e spirito</strong>. Attraverso il pennello, l'inchiostro e la carta di riso, imparerai a tracciare i caratteri giapponesi con <strong>presenza e consapevolezza</strong>.",
+        description2: "Guidati dall'<strong>insegnante zen Maurizio Anshu</strong>, i nostri corsi sono aperti a tutti, dai principianti ai praticanti esperti. Sperimenterai come ogni tratto riveli il tuo stato d'animo, insegnandoti la <strong>bellezza dell'imperfezione</strong> e l'<strong>accettazione del momento presente</strong>. Lo Shōdō diventa così un <strong>percorso di crescita personale</strong> e scoperta interiore.",
         folder: "shodo",
         carouselImages: 6,
         galleryImages: 6,
@@ -140,6 +140,28 @@ const activities = {
                 time: ""
             }
         ]
+    },
+    spaziogiovani: {
+        title: "Spazio Giovani",
+        icon: "fa-users",
+        description1: "Lo <strong>Spazio Giovani</strong> è un luogo dedicato ai ragazzi e alle ragazze che desiderano <strong>socializzare, crescere insieme</strong> e sviluppare nuove competenze in un <strong>ambiente accogliente e stimolante</strong>. Un punto di riferimento per il tempo libero dove fare <strong>nuove amicizie</strong> e partecipare ad <strong>attività ricreative</strong>.",
+        description2: "Attraverso <strong>giochi, attività creative, laboratori e momenti di condivisione</strong>, i giovani possono esprimere la propria personalità, sviluppare <strong>autonomia e senso di responsabilità</strong>. Uno spazio dove ognuno può sentirsi <strong>accolto e valorizzato</strong>.",
+        folder: "spazio giovani",
+        carouselImages: 6,
+        galleryImages: 6,
+        gallerySubtitle: "Scopri lo Spazio Giovani attraverso le immagini",
+        schedule: []
+    },
+    gitevacanze: {
+        title: "Gite e Vacanze",
+        icon: "fa-van-shuttle",
+        description1: "Organizziamo <strong>gite ed esperienze di vacanza</strong> pensate per offrire momenti di <strong>svago, scoperta e condivisione</strong>. Dalle <strong>escursioni giornaliere</strong> ai <strong>soggiorni residenziali</strong>, ogni esperienza è un'opportunità per <strong>creare ricordi indimenticabili</strong>.",
+        description2: "Le nostre gite e vacanze uniscono il <strong>divertimento all'apprendimento</strong>, permettendo ai partecipanti di scoprire <strong>nuovi luoghi, culture e tradizioni</strong>. Momenti preziosi di <strong>crescita personale e sociale</strong> in un clima di <strong>amicizia e collaborazione</strong>.",
+        folder: "gite e vacanze",
+        carouselImages: 4,
+        galleryImages: 4,
+        gallerySubtitle: "Scopri le nostre gite e vacanze attraverso le immagini",
+        schedule: []
     }
 };
 
@@ -168,8 +190,8 @@ function loadActivity() {
     document.getElementById('activity-title').textContent = activity.title;
     
     // Aggiorna le descrizioni
-    document.getElementById('activity-description-1').textContent = activity.description1;
-    document.getElementById('activity-description-2').textContent = activity.description2;
+    document.getElementById('activity-description-1').innerHTML = activity.description1;
+    document.getElementById('activity-description-2').innerHTML = activity.description2;
     
     // Carica le informazioni di schedule
     const scheduleContainer = document.getElementById('activity-schedule');
@@ -196,19 +218,22 @@ function loadActivity() {
         
         scheduleHTML += '</div>';
         scheduleContainer.innerHTML = scheduleHTML;
+        scheduleContainer.style.display = 'block';
     } else {
-        scheduleContainer.innerHTML = '';
+        scheduleContainer.style.display = 'none';
     }
     
-    // Carica le immagini del carosello
+    // Carica le immagini del carosello (tutte in ordine inverso)
     const carouselTrack = document.getElementById('carousel-track');
     carouselTrack.innerHTML = '';
     
-    for (let i = 1; i <= activity.carouselImages; i++) {
+    let isFirst = true;
+    for (let i = activity.carouselImages; i >= 1; i--) {
         const slide = document.createElement('div');
-        slide.className = `carousel-slide-about${i === 1 ? ' active' : ''}`;
+        slide.className = `carousel-slide-about${isFirst ? ' active' : ''}`;
         slide.innerHTML = `<img src="imgs/attivita/${activity.folder}/${i}.jpg" alt="${activity.title} ${i}">`;
         carouselTrack.appendChild(slide);
+        isFirst = false;
     }
     
     // Aggiungi l'icona badge al carosello
@@ -218,11 +243,11 @@ function loadActivity() {
     iconBadge.innerHTML = `<i class="fas ${activity.icon}"></i>`;
     carouselContainer.appendChild(iconBadge);
     
-    // Carica le immagini fixed (ultime 2 del carosello)
-    const fixedIndex1 = Math.max(1, activity.carouselImages - 1);
-    const fixedIndex2 = activity.carouselImages;
-    document.getElementById('fixed-img-1').src = `imgs/attivita/${activity.folder}/${fixedIndex1}.jpg`;
-    document.getElementById('fixed-img-2').src = `imgs/attivita/${activity.folder}/${fixedIndex2}.jpg`;
+    // Carica le immagini fixed (prime 2 immagini)
+    const img1 = activity.carouselImages >= 1 ? '1.jpg' : 'placeholder.jpg';
+    const img2 = activity.carouselImages >= 2 ? '2.jpg' : '1.jpg';
+    document.getElementById('fixed-img-1').src = `imgs/attivita/${activity.folder}/${img1}`;
+    document.getElementById('fixed-img-2').src = `imgs/attivita/${activity.folder}/${img2}`;
     
     // Inizializza il carosello dopo aver caricato le immagini
     initAboutCarousel();
