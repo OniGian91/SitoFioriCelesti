@@ -219,8 +219,10 @@ function loadActivity() {
         scheduleHTML += '</div>';
         scheduleContainer.innerHTML = scheduleHTML;
         scheduleContainer.style.display = 'block';
+        document.body.classList.remove('no-schedule');
     } else {
         scheduleContainer.style.display = 'none';
+        document.body.classList.add('no-schedule');
     }
     
     // Carica le immagini del carosello (tutte in ordine inverso)
