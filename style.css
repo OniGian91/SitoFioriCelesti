@@ -2428,6 +2428,61 @@ section[id] {
     font-size: 0.9rem;
 }
 
+.copyright-banner a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.copyright-banner a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Privacy & Cookie Policy Styles */
+.policy-content h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.policy-content h4 {
+    color: var(--dark-color);
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.policy-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.policy-content ul li {
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.policy-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.policy-content a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.policy-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
 /* ===================================
    News Page Styles
    =================================== */
