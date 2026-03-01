@@ -42,38 +42,44 @@
             <div class="about-content-new">
                 <div class="about-left">
                     <h2 class="main-title"><i class="fas fa-heart"></i> Sostieni Fiori Celesti APS</h2>
-                    <p class="activity-description">La tua donazione ci aiuta a continuare la nostra missione di inclusione sociale attraverso laboratori artigianali, pratiche zen e attività che valorizzano le abilità di ogni persona.</p>
-                    <p class="activity-description">Ogni contributo, grande o piccolo, fa la differenza e ci permette di mantenere viva la nostra Casa Laboratorio, uno spazio dove l'arte, l'artigianato e la pratica zen diventano strumenti di crescita e benessere per la comunità.</p>
+                    <p class="activity-description">Sostieni i nostri <strong>laboratori didattici artigianali</strong> e il <strong>Progetto di Comunità Residenziale Fiori Celesti - Officina dei Talenti</strong>. Dona il tuo <strong>5x1000 a Fiori Celesti APS - CF 91048120348</strong>.</p>
                 </div>
                 <div class="about-right">
-                    <div class="carousel-container-about">
-                        <div class="carousel-track-about">
-                            <div class="carousel-slide-about active">
-                                <img src="imgs/attivita/dona/6.jpg" alt="Dona 6">
-                            </div>
-                            <div class="carousel-slide-about">
-                                <img src="imgs/attivita/dona/5.jpg" alt="Dona 5">
-                            </div>
-                            <div class="carousel-slide-about">
-                                <img src="imgs/attivita/dona/4.jpg" alt="Dona 4">
-                            </div>
-                            <div class="carousel-slide-about">
-                                <img src="imgs/attivita/dona/3.jpg" alt="Dona 3">
-                            </div>
-                            <div class="carousel-slide-about">
-                                <img src="imgs/attivita/dona/2.jpg" alt="Dona 2">
-                            </div>
-                            <div class="carousel-slide-about">
-                                <img src="imgs/attivita/dona/1.jpg" alt="Dona 1">
-                            </div>
-                        </div>
+                    <!-- Immagine Fissa in Alto -->
+                    <div class="project-single-image">
+                        <img src="imgs/attivita/dona/1a.jpeg" alt="Sostieni Fiori Celesti">
                     </div>
-                    <div class="fixed-images">
+                    <!-- Due Caroselli Sotto -->
+                    <div class="fixed-images donation-carousels">
                         <div class="fixed-image">
-                            <img src="imgs/attivita/dona/1.jpg" alt="Laboratorio 1">
+                            <div class="carousel-container-small">
+                                <div class="carousel-track-small" id="carousel-left">
+                                    <div class="carousel-slide-small active">
+                                        <img src="imgs/attivita/dona/1.jpg" alt="Dona 1">
+                                    </div>
+                                    <div class="carousel-slide-small">
+                                        <img src="imgs/attivita/dona/2.jpg" alt="Dona 2">
+                                    </div>
+                                    <div class="carousel-slide-small">
+                                        <img src="imgs/attivita/dona/3.jpg" alt="Dona 3">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="fixed-image">
-                            <img src="imgs/attivita/dona/2.jpg" alt="Laboratorio 2">
+                            <div class="carousel-container-small">
+                                <div class="carousel-track-small" id="carousel-right">
+                                    <div class="carousel-slide-small active">
+                                        <img src="imgs/attivita/dona/4.jpg" alt="Dona 4">
+                                    </div>
+                                    <div class="carousel-slide-small">
+                                        <img src="imgs/attivita/dona/5.jpg" alt="Dona 5">
+                                    </div>
+                                    <div class="carousel-slide-small">
+                                        <img src="imgs/attivita/dona/6.jpg" alt="Dona 6">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,5 +206,62 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+    // Inizializza i caroselli delle donazioni
+    function initDonationCarousels() {
+        // Carosello sinistro
+        let currentSlideLeft = 0;
+        const slidesLeft = document.querySelectorAll('#carousel-left .carousel-slide-small');
+        
+        function showSlideLeft(n) {
+            if (!slidesLeft.length) return;
+            if (n >= slidesLeft.length) currentSlideLeft = 0;
+            if (n < 0) currentSlideLeft = slidesLeft.length - 1;
+            
+            slidesLeft.forEach(slide => slide.classList.remove('active'));
+            slidesLeft[currentSlideLeft].classList.add('active');
+        }
+        
+        function nextSlideLeft() {
+            currentSlideLeft++;
+            showSlideLeft(currentSlideLeft);
+        }
+        
+        // Carosello destro
+        let currentSlideRight = 0;
+        const slidesRight = document.querySelectorAll('#carousel-right .carousel-slide-small');
+        
+        function showSlideRight(n) {
+            if (!slidesRight.length) return;
+            if (n >= slidesRight.length) currentSlideRight = 0;
+            if (n < 0) currentSlideRight = slidesRight.length - 1;
+            
+            slidesRight.forEach(slide => slide.classList.remove('active'));
+            slidesRight[currentSlideRight].classList.add('active');
+        }
+        
+        function nextSlideRight() {
+            currentSlideRight++;
+            showSlideRight(currentSlideRight);
+        }
+        
+        // Auto-avanzamento ogni 5 secondi (con sfasamento)
+        if (slidesLeft.length > 1) {
+            setInterval(nextSlideLeft, 5000);
+        }
+        if (slidesRight.length > 1) {
+            setTimeout(() => {
+                setInterval(nextSlideRight, 5000);
+            }, 2500); // Inizia 2.5 secondi dopo per sfasare
+        }
+    }
+    
+    // Inizializza quando il DOM è pronto
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDonationCarousels);
+    } else {
+        initDonationCarousels();
+    }
+    </script>
 </body>
 </html>

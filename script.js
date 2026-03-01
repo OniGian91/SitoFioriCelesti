@@ -753,7 +753,29 @@ if (news3Slides.length > 0) {
 // ===================================
 function shareNews(newsId) {
     const newsUrl = `${window.location.origin}${window.location.pathname.replace(/\/[^\/]*$/, '')}/news.html#${newsId}`;
+    const newsTitle = 'Fiori Celesti APS - News';
     
+    // Try to use the Web Share API (available on mobile)
+    if (navigator.share) {
+        navigator.share({
+            title: newsTitle,
+            text: 'Scopri questa news da Fiori Celesti APS',
+            url: newsUrl
+        }).then(() => {
+            console.log('Condivisione riuscita');
+        }).catch((error) => {
+            // User cancelled or error occurred, fallback to clipboard
+            if (error.name !== 'AbortError') {
+                copyToClipboard(newsUrl);
+            }
+        });
+    } else {
+        // Fallback to clipboard for desktop
+        copyToClipboard(newsUrl);
+    }
+}
+
+function copyToClipboard(newsUrl) {
     // Try to use the Clipboard API
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(newsUrl).then(() => {
