@@ -46,8 +46,8 @@ const activities = {
         description1: "Scopri il piacere di <strong>coltivare la terra</strong> con i nostri laboratori di <strong>orticoltura biologica</strong>. Un'esperienza che unisce il <strong>contatto con la natura</strong>, l'apprendimento di <strong>tecniche agricole sostenibili</strong> e la soddisfazione di vedere crescere ciò che hai piantato con le tue mani.",
         description2: "Disponiamo di un <strong>orto biologico</strong> dove sperimentiamo <strong>metodi di coltivazione naturali e sostenibili</strong>. Le attività sono aperte a tutti, dai bambini agli adulti.",
         folder: "orticoltura",
-        carouselImages: 9,
-        galleryImages: 9,
+        carouselImages: 8,
+        galleryImages: 8,
         gallerySubtitle: "Scopri il nostro orto e le attività attraverso le immagini",
         schedule: []
     },

@@ -104,6 +104,7 @@ section[id] {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .nav ul {
@@ -2691,6 +2692,10 @@ section[id] {
         font-size: 1.1rem;
     }
 
+    .about {
+        padding: 2rem 0 2rem 0;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -2727,12 +2732,51 @@ section[id] {
         margin-top: 1.5rem;
     }
 
+    /* Layout per pagine attività in mobile: titolo, carosello, testo, orari, tasti */
+    .about-content-new:has(.activity-schedule) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-content-new:has(.activity-schedule) .about-left {
+        display: contents;
+    }
+
+    .about-content-new:has(.activity-schedule) .main-title {
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .about-content-new:has(.activity-schedule) .about-right {
+        order: 2;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    .about-content-new:has(.activity-schedule) .activity-description {
+        order: 3;
+        margin-top: 1.5rem;
+    }
+
+    .about-content-new:has(.activity-schedule) .activity-schedule {
+        order: 4;
+        margin-top: 1.5rem;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .about-content-new:has(.activity-schedule) .cta-buttons {
+        order: 5;
+        margin-top: 1.5rem;
+    }
+
     .about-left .main-title {
         font-size: 2rem;
     }
 
     .scrolling-texts {
-        height: 130px;
+        height: 160px;
     }
 
     .japanese-text {
@@ -2752,6 +2796,8 @@ section[id] {
         flex-direction: column;
         gap: 0.8rem;
         margin-top: 1rem;
+        width: 100%;
+        padding: 0;
     }
 
     .hero-cta-buttons {
@@ -2851,6 +2897,10 @@ section[id] {
         padding: 1.5rem;
     }
 
+    .project-content {
+        text-align: center;
+    }
+
     .guarantees-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -2862,6 +2912,7 @@ section[id] {
 
     .activity-content {
         padding: 1rem;
+        text-align: center;
     }
 
     .activity-content h3 {
@@ -3070,6 +3121,7 @@ section[id] {
 
     .logo-text {
         font-size: 1.2rem;
+        white-space: nowrap;
     }
 
     .activity-category h3 {
