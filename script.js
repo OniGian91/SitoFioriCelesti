@@ -4,6 +4,23 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.querySelector('.nav');
+    const header = document.querySelector('.header');
+    
+    // Add scrolled class on page load if there's a hash in URL or if scrolled
+    if (header && (window.location.hash || window.pageYOffset > 50)) {
+        header.classList.add('scrolled');
+    }
+    
+    // Handle scroll to add/remove scrolled class
+    window.addEventListener('scroll', function() {
+        if (header) {
+            if (window.pageYOffset > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    });
     
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
@@ -306,20 +323,55 @@ document.addEventListener('DOMContentLoaded', function() {
 // Header Scroll Effect
 // ===================================
 let lastScroll = 0;
+let isAutoScrolling = false;
 const header = document.querySelector('.header');
+
+// Prevent header from hiding when landing on page with hash
+if (window.location.hash) {
+    isAutoScrolling = true;
+    setTimeout(() => {
+        isAutoScrolling = false;
+    }, 1500); // Keep header visible for 1.5 seconds after page load with hash
+}
+
+// Track automatic scrolling (from anchor links)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function() {
+        isAutoScrolling = true;
+        setTimeout(() => {
+            isAutoScrolling = false;
+        }, 1000); // Reset after 1 second
+    });
+});
 
 window.addEventListener('scroll', function() {
     const currentScroll = window.pageYOffset;
     
+    // Don't hide header during automatic scrolling
+    if (isAutoScrolling) {
+        if (header) {
+            header.style.transform = 'translateY(0)';
+        }
+        lastScroll = currentScroll;
+        return;
+    }
+    
     if (currentScroll <= 0) {
-        header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-    } else if (currentScroll > lastScroll) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
+        if (header) {
+            header.style.transform = 'translateY(0)';
+            header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        }
+    } else if (currentScroll > lastScroll && currentScroll > 100) {
+        // Scrolling down manually
+        if (header) {
+            header.style.transform = 'translateY(-100%)';
+        }
     } else {
         // Scrolling up
-        header.style.transform = 'translateY(0)';
-        header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+        if (header) {
+            header.style.transform = 'translateY(0)';
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+        }
     }
     
     lastScroll = currentScroll;
@@ -355,7 +407,8 @@ window.addEventListener('scroll', function() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= (sectionTop - 100)) {
+        // Increased offset to 180 to account for scroll-margin-top and header
+        if (pageYOffset >= (sectionTop - 180)) {
             current = section.getAttribute('id');
         }
     });
@@ -639,6 +692,131 @@ if (news2Slides.length > 0) {
     setInterval(() => {
         nextNews2Slide();
     }, 5000);
+}
+
+// News 3 Carousel (8 ottobre)
+let news3CurrentSlide = 0;
+const news3Slides = document.querySelectorAll('#news3CarouselTrack .carousel-slide');
+const news3Dots = document.querySelectorAll('#news3CarouselDots .dot');
+const news3PrevBtn = document.getElementById('news3CarouselPrev');
+const news3NextBtn = document.getElementById('news3CarouselNext');
+
+function showNews3Slide(n) {
+    if (!news3Slides.length) return;
+    
+    if (n >= news3Slides.length) news3CurrentSlide = 0;
+    if (n < 0) news3CurrentSlide = news3Slides.length - 1;
+    
+    news3Slides.forEach(slide => slide.classList.remove('active'));
+    news3Dots.forEach(dot => dot.classList.remove('active'));
+    
+    news3Slides[news3CurrentSlide].classList.add('active');
+    if (news3Dots[news3CurrentSlide]) {
+        news3Dots[news3CurrentSlide].classList.add('active');
+    }
+}
+
+function nextNews3Slide() {
+    news3CurrentSlide++;
+    showNews3Slide(news3CurrentSlide);
+}
+
+function prevNews3Slide() {
+    news3CurrentSlide--;
+    showNews3Slide(news3CurrentSlide);
+}
+
+if (news3PrevBtn) {
+    news3PrevBtn.addEventListener('click', prevNews3Slide);
+}
+
+if (news3NextBtn) {
+    news3NextBtn.addEventListener('click', nextNews3Slide);
+}
+
+news3Dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        news3CurrentSlide = index;
+        showNews3Slide(news3CurrentSlide);
+    });
+});
+
+// Auto-advance news3 carousel every 5 seconds
+if (news3Slides.length > 0) {
+    setInterval(() => {
+        nextNews3Slide();
+    }, 5000);
+}
+
+// ===================================
+// Share News Function
+// ===================================
+function shareNews(newsId) {
+    const newsUrl = `${window.location.origin}${window.location.pathname.replace(/\/[^\/]*$/, '')}/news.html#${newsId}`;
+    
+    // Try to use the Clipboard API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(newsUrl).then(() => {
+            showShareNotification('Link copiato negli appunti!');
+        }).catch(() => {
+            // Fallback to manual copy
+            fallbackCopyTextToClipboard(newsUrl);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyTextToClipboard(newsUrl);
+    }
+}
+
+function fallbackCopyTextToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.top = "-9999px";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showShareNotification('Link copiato negli appunti!');
+    } catch (err) {
+        showShareNotification('Errore nella copia del link', true);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showShareNotification(message, isError = false) {
+    // Remove any existing notification
+    const existingNotification = document.querySelector('.share-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'share-notification';
+    notification.textContent = message;
+    if (isError) {
+        notification.style.background = 'var(--secondary-color)';
+    }
+    
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Hide and remove notification after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
 }
 
 // ===================================

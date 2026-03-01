@@ -12,7 +12,15 @@ const activities = {
         folder: "falegnameria",
         carouselImages: 7,
         galleryImages: 7,
-        gallerySubtitle: "Scopri il nostro laboratorio di falegnameria attraverso le immagini"
+        gallerySubtitle: "Scopri il nostro laboratorio di falegnameria attraverso le immagini",
+        schedule: [
+            {
+                day: "Mercoledì",
+                target: "Ragazzi",
+                instructor: "Carmine",
+                time: "15:00 - 17:00"
+            }
+        ]
     },
     cioccolateria: {
         title: "Cioccolateria",
@@ -22,7 +30,15 @@ const activities = {
         folder: "cioccolateria",
         carouselImages: 6,
         galleryImages: 6,
-        gallerySubtitle: "Scopri il nostro laboratorio di cioccolateria attraverso le immagini"
+        gallerySubtitle: "Scopri il nostro laboratorio di cioccolateria attraverso le immagini",
+        schedule: [
+            {
+                day: "Giovedì",
+                target: "Ragazzi",
+                instructor: "Manuela Fiscarelli",
+                time: "15:00 - 17:00"
+            }
+        ]
     },
     orticoltura: {
         title: "Orticoltura",
@@ -32,7 +48,8 @@ const activities = {
         folder: "orticoltura",
         carouselImages: 6,
         galleryImages: 6,
-        gallerySubtitle: "Scopri il nostro orto e le attività attraverso le immagini"
+        gallerySubtitle: "Scopri il nostro orto e le attività attraverso le immagini",
+        schedule: []
     },
     qigong: {
         title: "Qigong",
@@ -42,7 +59,21 @@ const activities = {
         folder: "qigong",
         carouselImages: 4,
         galleryImages: 4,
-        gallerySubtitle: "Scopri le nostre pratiche di Qigong attraverso le immagini"
+        gallerySubtitle: "Scopri le nostre pratiche di Qigong attraverso le immagini",
+        schedule: [
+            {
+                day: "Martedì",
+                target: "Ragazzi",
+                instructor: "Carmine Shinko",
+                time: "16:00 - 17:00"
+            },
+            {
+                day: "Mercoledì",
+                target: "Adulti",
+                instructor: "Carmine",
+                time: "18:00 - 19:00"
+            }
+        ]
     },
     gelateria: {
         title: "Gelateria",
@@ -52,7 +83,27 @@ const activities = {
         folder: "gelateria",
         carouselImages: 6,
         galleryImages: 6,
-        gallerySubtitle: "Scopri il nostro laboratorio di gelateria attraverso le immagini"
+        gallerySubtitle: "Scopri il nostro laboratorio di gelateria attraverso le immagini",
+        schedule: [
+            {
+                day: "Lunedì",
+                target: "Ragazzi",
+                instructor: "Giuliano Curati",
+                time: "15:00 - 17:00"
+            },
+            {
+                day: "Lunedì",
+                target: "Adulti",
+                instructor: "Giuliano Curati",
+                time: "1 lezione serale/mese"
+            },
+            {
+                day: "Venerdì",
+                target: "Ragazzi",
+                instructor: "Giuliano Curati",
+                time: "15:00 - 17:00"
+            }
+        ]
     },
     ceramica: {
         title: "Ceramica",
@@ -62,7 +113,15 @@ const activities = {
         folder: "ceramica",
         carouselImages: 3,
         galleryImages: 0,
-        gallerySubtitle: "Scopri il nostro laboratorio di ceramica attraverso le immagini"
+        gallerySubtitle: "Scopri il nostro laboratorio di ceramica attraverso le immagini",
+        schedule: [
+            {
+                day: "Sabato",
+                target: "Ragazzi",
+                instructor: "Stefano Fedolfi",
+                time: "10:30 - 12:00"
+            }
+        ]
     },
     shodo: {
         title: "SHŌDŌ (Calligrafia Giapponese)",
@@ -72,7 +131,15 @@ const activities = {
         folder: "shodo",
         carouselImages: 6,
         galleryImages: 6,
-        gallerySubtitle: "Scopri l'arte della calligrafia giapponese attraverso le immagini"
+        gallerySubtitle: "Scopri l'arte della calligrafia giapponese attraverso le immagini",
+        schedule: [
+            {
+                day: "Venerdì",
+                target: "Adulti",
+                instructor: "Maurizio Anshu",
+                time: ""
+            }
+        ]
     }
 };
 
@@ -103,6 +170,35 @@ function loadActivity() {
     // Aggiorna le descrizioni
     document.getElementById('activity-description-1').textContent = activity.description1;
     document.getElementById('activity-description-2').textContent = activity.description2;
+    
+    // Carica le informazioni di schedule
+    const scheduleContainer = document.getElementById('activity-schedule');
+    if (activity.schedule && activity.schedule.length > 0) {
+        let scheduleHTML = '<h3><i class="fas fa-calendar-alt"></i> Orari e Referenti</h3><div class="schedule-cards">';
+        
+        activity.schedule.forEach(slot => {
+            scheduleHTML += `
+                <div class="schedule-card">
+                    <div class="schedule-day">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>${slot.day}</span>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-badge ${slot.target.toLowerCase()}">${slot.target}</div>
+                        <div class="schedule-instructor">
+                            <i class="fas fa-user"></i> con ${slot.instructor}
+                        </div>
+                        ${slot.time ? `<div class="schedule-time"><i class="fas fa-clock"></i> ${slot.time}</div>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+        
+        scheduleHTML += '</div>';
+        scheduleContainer.innerHTML = scheduleHTML;
+    } else {
+        scheduleContainer.innerHTML = '';
+    }
     
     // Carica le immagini del carosello
     const carouselTrack = document.getElementById('carousel-track');

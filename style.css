@@ -308,7 +308,7 @@ section[id] {
    =================================== */
 .about {
     padding: 5rem 0 2rem 0;
-    background: #e3e8ed;
+    background: #d0d7de;
     position: relative;
     overflow: visible;
 }
@@ -341,6 +341,122 @@ section[id] {
     line-height: 1.8;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
+}
+
+.activity-schedule {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.activity-schedule h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.activity-schedule h3 i {
+    font-size: 1.2rem;
+}
+
+.schedule-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.schedule-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(76, 154, 255, 0.05), rgba(123, 104, 238, 0.05));
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.schedule-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.15);
+}
+
+.schedule-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 100px;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-day i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.schedule-day span {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.95rem;
+}
+
+.schedule-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.schedule-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.schedule-badge.ragazzi {
+    background: linear-gradient(135deg, #4c9aff, #7b68ee);
+    color: white;
+}
+
+.schedule-badge.adulti {
+    background: linear-gradient(135deg, #ff6b7a, #ff4757);
+    color: white;
+}
+
+.schedule-instructor {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.schedule-instructor i {
+    color: var(--primary-color);
+}
+
+.schedule-time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.schedule-time i {
+    color: var(--accent-color);
 }
 
 .scrolling-texts {
@@ -592,7 +708,7 @@ section[id] {
    Team Section
    =================================== */
 .team-section {
-    padding: 3rem 0 2rem 0;
+    padding: 3rem 0 1rem 0;
     background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
     overflow: hidden;
 }
@@ -853,6 +969,12 @@ section[id] {
     line-height: 1.8;
     margin-bottom: 2rem;
     font-size: 1.05rem;
+}
+
+.activity-content strong,
+.activities-intro-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .activity-content .btn {
@@ -2203,6 +2325,7 @@ section[id] {
     box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    scroll-margin-top: 130px;
 }
 
 .news-item:hover {
@@ -2212,12 +2335,41 @@ section[id] {
 
 .news-header {
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .news-author {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.btn-share {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    font-family: var(--font-primary);
+}
+
+.btn-share:hover {
+    background: var(--primary-color);
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+}
+
+.btn-share i {
+    font-size: 0.85rem;
 }
 
 .news-author img {
@@ -2252,6 +2404,11 @@ section[id] {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.5rem;
+}
+
+.news-content strong {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 .news-carousel {
@@ -2689,6 +2846,17 @@ section[id] {
     .news-content-home h3 {
         font-size: 1.3rem;
     }
+
+    .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-share {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2727,6 +2895,18 @@ section[id] {
     .team-photo {
         width: 100px;
         height: 100px;
+    }
+
+    .schedule-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .schedule-day {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -2845,3 +3025,28 @@ section[id] {
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-3 { margin-bottom: 3rem; }
+
+/* ===================================
+   Share Notification
+   =================================== */
+.share-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.share-notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header scrolled">
         <div class="container">
             <div class="header-content">
                 <a href="index.html" class="logo">
@@ -21,9 +21,9 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="listaattivita.html">Attività</a></li>
                         <li><a href="index.html#progetti">Progetti</a></li>
                         <li><a href="index.html#contatti">Contatti</a></li>
+                        <li><a href="listaattivita.html">Attività</a></li>
                         <li><a href="news.html" class="active">News</a></li>
                         <li><a href="donazioni.html" class="btn-donate">Dona ora</a></li>
                     </ul>
@@ -35,21 +35,12 @@
             </div>
         </div>
     </header>
-
-    <!-- News Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Ultime News</h1>
-            <p>Resta aggiornato sulle nostre attività, eventi e novità</p>
-        </div>
-    </section>
-
     <!-- News Feed -->
     <section class="news-feed">
         <div class="container">
             <div class="news-container">
                 <!-- News Item 1 -->
-                <article class="news-item">
+                <article class="news-item" id="news-sigep-2026">
                     <div class="news-header">
                         <div class="news-author">
                             <img src="imgs/logo.png" alt="Fiori Celesti APS">
@@ -60,17 +51,20 @@
                                 </span>
                             </div>
                         </div>
+                        <button class="btn-share" onclick="shareNews('news-sigep-2026')">
+                            <i class="fas fa-share-alt"></i> Condividi
+                        </button>
                     </div>
                     <div class="news-content">
                         <h3>Ecco la nostra intervista alla Fiera SIGEP per FOOD PROFESSIONAL NETWORK</h3>
                         
-                        <p>SPLENDIDA GIORNATA A RIMINI SIGEP WORLD 2026 - Fiera Mondiale di Gelateria, Cioccolateria, Pasticceria, Pizza e Panificazione.</p>
+                        <p><strong>SPLENDIDA GIORNATA A RIMINI SIGEP WORLD 2026</strong> - Fiera Mondiale di Gelateria, Cioccolateria, Pasticceria, Pizza e Panificazione.</p>
                         
-                        <p>Grazie a tutti i volontari che hanno contribuito alla buona riuscita di questa bella giornata! Ad Assunta, Dante, Reana, Manuela e Sara!</p>
+                        <p>Grazie a tutti i <strong>volontari</strong> che hanno contribuito alla buona riuscita di questa bella giornata! Ad Assunta, Dante, Reana, Manuela e Sara!</p>
                         
-                        <p>Un ringraziamento speciale ai maestri Giuliano e Gino per averci permesso di contemplare tanta bellezza e incontrare tanti imprenditori che sicuramente aiuteranno Fiori Celesti!</p>
+                        <p>Un ringraziamento speciale ai <strong>maestri Giuliano e Gino</strong> per averci permesso di contemplare tanta bellezza e incontrare tanti imprenditori che sicuramente aiuteranno Fiori Celesti!</p>
                         
-                        <p>Grazie ai ragazzi per il loro entusiasmo sempre genuino!</p>
+                        <p>Grazie ai ragazzi per il loro <strong>entusiasmo sempre genuino</strong>!</p>
                         
                         <!-- Facebook Video Embed -->
                         <div class="news-video">
@@ -80,7 +74,7 @@
                 </article>
 
                 <!-- News Item 2 -->
-                <article class="news-item">
+                <article class="news-item" id="news-pulmino-2025">
                     <div class="news-header">
                         <div class="news-author">
                             <img src="imgs/logo.png" alt="Fiori Celesti APS">
@@ -91,13 +85,16 @@
                                 </span>
                             </div>
                         </div>
+                        <button class="btn-share" onclick="shareNews('news-pulmino-2025')">
+                            <i class="fas fa-share-alt"></i> Condividi
+                        </button>
                     </div>
                     <div class="news-content">
                         <h3>🚌 Ecco arrivato il pulmino Fiori Celesti! Oggi viaggio inaugurale e benedizione in piazza a Tabiano! 💙</h3>
                         
-                        <p>Tanta partecipazione all'evento di benedizione del presepe! Molte associazioni, famiglie, ragazzi e tanta energia di rinnovamento!</p>
+                        <p>Tanta partecipazione all'evento di <strong>benedizione del presepe</strong>! Molte associazioni, famiglie, ragazzi e tanta <strong>energia di rinnovamento</strong>!</p>
                         
-                        <p>Grazie a don Bogdan, al Sindaco di Salsomaggiore Luca Musile Tanzi, alla Proloco Amici di Tabiano, agli Alpini di Tabiano e Salsomaggiore, alle Associazioni Why Not?, Il Cortile, Il Sole, al Consorzio ABITABIANO, a tutti i volontari, ai ragazzi, alle famiglie e a tutti i presenti 💙</p>
+                        <p>Grazie a <strong>don Bogdan</strong>, al <strong>Sindaco di Salsomaggiore Luca Musile Tanzi</strong>, alla <strong>Proloco Amici di Tabiano</strong>, agli Alpini di Tabiano e Salsomaggiore, alle Associazioni Why Not?, Il Cortile, Il Sole, al Consorzio ABITABIANO, a tutti i volontari, ai ragazzi, alle famiglie e a tutti i presenti 💙</p>
                         
                         <!-- Photo Carousel -->
                         <div class="news-carousel">
@@ -146,7 +143,7 @@
                 </article>
 
                 <!-- News Item 3 -->
-                <article class="news-item">
+                <article class="news-item" id="news-inaugurazione-2025">
                     <div class="news-header">
                         <div class="news-author">
                             <img src="imgs/logo.png" alt="Fiori Celesti APS">
@@ -157,20 +154,23 @@
                                 </span>
                             </div>
                         </div>
+                        <button class="btn-share" onclick="shareNews('news-inaugurazione-2025')">
+                            <i class="fas fa-share-alt"></i> Condividi
+                        </button>
                     </div>
                     <div class="news-content">
                         <h3>Grande successo dell'inaugurazione della Casa Laboratorio!</h3>
-                        <p>Ringraziamo innanzitutto la Pro Loco Amici di Tabiano, in primis il presidente Giuseppe Gorreri, che grazie al supporto datoci e all'eccezionale Festa del Ringraziamento organizzata ieri a Tabiano, hanno contribuito a dare ampia partecipazione a visibilità al nostro evento!</p>
+                        <p>Ringraziamo innanzitutto la <strong>Pro Loco Amici di Tabiano</strong>, in primis il presidente Giuseppe Gorreri, che grazie al supporto datoci e all'eccezionale <strong>Festa del Ringraziamento</strong> organizzata ieri a Tabiano, hanno contribuito a dare ampia partecipazione a visibilità al nostro evento!</p>
                         
                         <p>Ringraziamo sentitamente tutti i presenti e in particolar modo il vescovo Ovidio Vezzoli, don Bogdan, don Ubaldo, il rev. Fausto Taiten Guareschi, il rev. Maurizio Anshu Ferro, il sindaco Musile Tanzi, l'assessore Volpicelli, i consiglieri Filippo Fantoni, Andrea Davighi, Laura Gerra, Michele Gandolfi e Anna Pedretti.</p>
                         
-                        <p>Un particolare ringraziamento va al signor Gianluigi Emanuelli per la donazione del locale diventato sede permanente della Casa Laboratorio di Tabiano e alla signora Nicoletta Cosenza per la messa a disposizione del locale adiacente, raddoppiando gli spazi disponibili per i laboratori.</p>
+                        <p>Un particolare ringraziamento va al signor <strong>Gianluigi Emanuelli</strong> per la <strong>donazione del locale</strong> diventato <strong>sede permanente della Casa Laboratorio di Tabiano</strong> e alla signora <strong>Nicoletta Cosenza</strong> per la messa a disposizione del locale adiacente, <strong>raddoppiando gli spazi disponibili</strong> per i laboratori.</p>
                         
-                        <p>Un grande ringraziamento va agli instancabili volontari e sostenitori di Fiori Celesti: la vice responsabile Manuela Fiscarelli, i maestri gelatieri Giuliano Curati e Gino Fratini, il maestro pasticcere Claudio Gatti, la psicologa Marica Barbieri, la geometra Silvia Gatti, la commercialista Marisa Benzi, il maestro ceramista Stefano Fedolfi, la presidente della Consulta del Volontariato Nicoletta Mestieri, il dottor Pasquale Gerace, i volontari Matteo, Giulia, Andi, Reana, Assunta, Augusta, Fabrizio, Nicola, Luana, Manuela, Paolo, Fausto, Sara, Anna, Raffaele e a tutti coloro che hanno collaborato all'ottima riuscita dell'importante evento!</p>
+                        <p>Un grande ringraziamento va agli instancabili <strong>volontari e sostenitori di Fiori Celesti</strong>: la vice responsabile Manuela Fiscarelli, i maestri gelatieri Giuliano Curati e Gino Fratini, il maestro pasticcere Claudio Gatti, la psicologa Marica Barbieri, la geometra Silvia Gatti, la commercialista Marisa Benzi, il maestro ceramista Stefano Fedolfi, la presidente della Consulta del Volontariato Nicoletta Mestieri, il dottor Pasquale Gerace, i volontari Matteo, Giulia, Andi, Reana, Assunta, Augusta, Fabrizio, Nicola, Luana, Manuela, Paolo, Fausto, Sara, Anna, Raffaele e a tutti coloro che hanno collaborato all'ottima riuscita dell'importante evento!</p>
                         
-                        <p>Un grazie anche a Mara e a Monia del gruppo Komyo Reiki Do di Lodi, a Elena del Circolo Zoom per le foto, agli amici della cooperativa Il Cortile, della struttura Il Sole, agli amici dell'AIK Milano e ai più di 100 presenti all'inaugurazione!</p>
+                        <p>Un grazie anche a Mara e a Monia del gruppo Komyo Reiki Do di Lodi, a Elena del Circolo Zoom per le foto, agli amici della cooperativa Il Cortile, della struttura Il Sole, agli amici dell'AIK Milano e ai più di <strong>100 presenti all'inaugurazione</strong>!</p>
                         
-                        <p>L'evento ci ha permesso anche di raccogliere i primi fondi per l'acquisto del pulmino Fiori Celesti.</p>
+                        <p>L'evento ci ha permesso anche di raccogliere i <strong>primi fondi per l'acquisto del pulmino Fiori Celesti</strong>.</p>
                         
                         <p><strong>Un altro passo in avanti per tutti!</strong></p>
                         
@@ -202,6 +202,77 @@
                                 </button>
                             </div>
                             <div class="carousel-dots" id="news2CarouselDots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                                <span class="dot" data-slide="3"></span>
+                                <span class="dot" data-slide="4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Item 4 -->
+                <article class="news-item" id="news-collaborazione-ilsole-2025">
+                    <div class="news-header">
+                        <div class="news-author">
+                            <img src="imgs/logo.png" alt="Fiori Celesti APS">
+                            <div class="author-info">
+                                <h4>Fiori Celesti APS</h4>
+                                <span class="news-date">
+                                    <i class="far fa-calendar"></i> 8 Ottobre 2025
+                                </span>
+                            </div>
+                        </div>
+                        <button class="btn-share" onclick="shareNews('news-collaborazione-ilsole-2025')">
+                            <i class="fas fa-share-alt"></i> Condividi
+                        </button>
+                    </div>
+                    <div class="news-content">
+                        <h3>Collaborazione con Il Sole di Tabiano</h3>
+                        
+                        <p>È iniziata ufficialmente la collaborazione tra <strong>Fiori Celesti</strong> e la <strong>cooperativa sociale Il Sole di Tabiano</strong>!</p>
+                        
+                        <p>Ieri il primo gruppo di arditi si è cimentato nel laboratorio psicomotorio di <strong>"Yoga Marziale"</strong> con tanto affetto e entusiasmo!</p>
+                        
+                        <p>L'educatore psicomotorio <strong>Carmine Shinkō De Rosario</strong>, con il prezioso supporto dell'educatrice Ilaria de Il Sole, ha condotto i ragazzi in un viaggio nella lontana Cina, grazie agli antichi movimenti del <strong>Qigong e del Kung fu</strong>. Viaggio che conduce in fine al centro di ogni essere umano, attraverso la corporeità, i movimenti simbolici e qualche sana risata!</p>
+                        
+                        <p>La collaborazione è nata da una ricca chiaccherata tra la <strong>Dott.ssa Maria Stella Demasi, psicologa e psicoterapeuta</strong>, coordinatrice della struttura Il Sole e il monaco zen <strong>Carmine Shinkō De Rosario</strong>, responsabile di Fiori Celesti APS.</p>
+                        
+                        <p>È emersa fin da subito una comunione di intenti, nell'ottica di dar la possibilità a questi ragazzi e ragazze di fare esperienze con <strong>valenza formativa, di integrazione e di ulteriore miglioramento della propria qualità di vita</strong> in un contesto protetto come quello di Fiori Celesti.</p>
+                        
+                        <p>A breve partirà anche la collaborazione per il <strong>laboratorio di ceramica</strong>, grazie all'esperto artigiano che arriverà direttamente da Il Sole!</p>
+                        
+                        <p>Piccoli eventi che ci riempiono il cuore di soddisfazione! Un grazie speciale alla coordinatrice, agli educatori e ai ragazzi de Il Sole</p>
+                        
+                        <!-- Photo Carousel -->
+                        <div class="news-carousel">
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev" id="news3CarouselPrev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="carousel-track" id="news3CarouselTrack">
+                                    <div class="carousel-slide active">
+                                        <img src="imgs/news/3/1.jpg" alt="Collaborazione Il Sole">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/3/2.jpg" alt="Collaborazione Il Sole">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/3/3.jpg" alt="Collaborazione Il Sole">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/3/4.jpg" alt="Collaborazione Il Sole">
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="imgs/news/3/5.jpg" alt="Collaborazione Il Sole">
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next" id="news3CarouselNext">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots" id="news3CarouselDots">
                                 <span class="dot active" data-slide="0"></span>
                                 <span class="dot" data-slide="1"></span>
                                 <span class="dot" data-slide="2"></span>
