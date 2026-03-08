@@ -149,6 +149,24 @@ section[id] {
     border-bottom: none !important;
 }
 
+.btn-volunteer {
+    background: linear-gradient(135deg, var(--primary-color), #5c9fff);
+    color: white !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+    transition: var(--transition);
+    border-bottom: none !important;
+}
+
+.btn-volunteer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 154, 255, 0.5);
+    border-bottom: none !important;
+}
+
 .btn-donate-mobile {
     display: none;
     background: linear-gradient(135deg, var(--secondary-color), #ff6b7a);
@@ -177,6 +195,10 @@ section[id] {
     font-size: 1.5rem;
     color: var(--primary-color);
     cursor: pointer;
+}
+
+.mobile-only {
+    display: none;
 }
 
 /* ===================================
@@ -1117,7 +1139,7 @@ section[id] {
     background: var(--light-color);
 }
 
-.projects-section .section-subtitle {
+.section-subtitle {
     text-align: center;
     color: var(--text-secondary);
     font-size: 1.15rem;
@@ -2786,6 +2808,14 @@ section[id] {
         display: none;
     }
 
+    .nav .btn-volunteer {
+        display: none;
+    }
+
+    .mobile-only {
+        display: list-item;
+    }
+
     .nav {
         position: absolute;
         top: 100%;
@@ -3450,4 +3480,181 @@ section[id] {
 .share-notification.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+/* ===================================
+   Volunteer Page
+   =================================== */
+.volunteer-image-placeholder {
+    background: var(--light-color);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.placeholder-content {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.placeholder-content i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.placeholder-content p {
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
+.volunteer-benefits {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.volunteer-benefits h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.volunteer-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.volunteer-benefits ul li {
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.volunteer-benefits ul li i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.volunteer-info-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.volunteer-step {
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+}
+
+.volunteer-step h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.volunteer-step p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.volunteer-areas {
+    margin-top: 3rem;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.area-card {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(76, 154, 255, 0.05), rgba(123, 104, 238, 0.05));
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.area-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(76, 154, 255, 0.15);
+}
+
+.area-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.area-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.area-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .volunteer-info-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-benefits {
+        padding: 1.5rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-buttons .btn {
+        width: 100%;
+    }
 }

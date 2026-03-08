@@ -364,7 +364,7 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item, .section-header, .team-member, .project-showcase, .contact-item, .map-container, .chi-siamo-image, .chi-siamo-text, .activities-intro-image, .activities-intro-text, .activity-description, .donation-card, .donation-info-box');
+    const animatedElements = document.querySelectorAll('.activity-card, .service-item, .news-item, .section-header, .team-member, .project-showcase, .contact-item, .map-container, .chi-siamo-image, .chi-siamo-text, .activities-intro-image, .activities-intro-text, .activity-description, .donation-card, .donation-info-box, .category-link');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
