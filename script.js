@@ -152,10 +152,60 @@ if (aboutSlides.length > 0) {
 }
 
 // ===================================
-// Team Carousel
+// Team Carousel - Dynamic Random Groups
 // ===================================
 let currentTeamGroup = 0;
-const teamGroups = document.querySelectorAll('.team-group');
+let teamGroups = [];
+
+// Funzione per mescolare un array (Fisher-Yates shuffle)
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Funzione per creare i gruppi dinamici del team
+function createTeamGroups() {
+    const teamCarousel = document.getElementById('teamCarousel');
+    if (!teamCarousel || typeof teamMembersData === 'undefined') return;
+    
+    // Mescola casualmente i membri del team
+    const shuffledMembers = shuffleArray(teamMembersData);
+    
+    // Crea gruppi da 3 membri
+    const groupsData = [];
+    for (let i = 0; i < shuffledMembers.length; i += 3) {
+        groupsData.push(shuffledMembers.slice(i, i + 3));
+    }
+    
+    // Genera l'HTML per i gruppi
+    teamCarousel.innerHTML = '';
+    groupsData.forEach((group, index) => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'team-group' + (index === 0 ? ' active' : '');
+        
+        group.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.className = 'team-member';
+            memberDiv.innerHTML = `
+                <div class="team-photo">
+                    <img src="${member.image}" alt="${member.alt}" onerror="this.src='imgs/people/default.jpg'">
+                </div>
+                <h4>${member.name}</h4>
+                <p>${member.role}</p>
+            `;
+            groupDiv.appendChild(memberDiv);
+        });
+        
+        teamCarousel.appendChild(groupDiv);
+    });
+    
+    // Aggiorna la selezione dei gruppi
+    teamGroups = document.querySelectorAll('.team-group');
+}
 
 function showTeamGroup(n) {
     if (!teamGroups.length) return;
@@ -172,11 +222,16 @@ function nextTeamGroup() {
     showTeamGroup(currentTeamGroup);
 }
 
-// Auto-advance team carousel every 6 seconds
-if (teamGroups.length > 1) {
-    setInterval(() => {
-        nextTeamGroup();
-    }, 6000);
+// Inizializza i gruppi del team quando il DOM è pronto
+if (document.getElementById('teamCarousel')) {
+    createTeamGroups();
+    
+    // Auto-advance team carousel every 6 seconds
+    if (teamGroups.length > 1) {
+        setInterval(() => {
+            nextTeamGroup();
+        }, 6000);
+    }
 }
 
 // ===================================

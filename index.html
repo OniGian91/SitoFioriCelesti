@@ -40,9 +40,8 @@
                     <ul>
                         <li><a href="#home" class="active">Home</a></li>
                         <li><a href="#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="#progetti">Progetti</a></li>
+                        <li><a href="#progetti">Cosa Facciamo</a></li>
                         <li><a href="#contatti">Contatti</a></li>
-                        <li><a href="listaattivita.html">Attività</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="donazioni.html" class="btn-donate">Dona ora</a></li>
                     </ul>
@@ -80,7 +79,7 @@
                     </div>
                     <div class="cta-buttons hero-cta-buttons">
                         <a href="#chi-siamo" class="btn btn-secondary">Chi Siamo</a>
-                        <a href="listaattivita.html" class="btn btn-primary">Scopri le nostre attività</a>
+                        <a href="#progetti" class="btn btn-primary">Scopri cosa facciamo</a>
                     </div>
                 </div>
                 <div class="about-right">
@@ -145,104 +144,120 @@
     <!-- Team Section -->
     <section class="team-section">
         <div class="container">
-            <div class="team-carousel">
-                <!-- Gruppo 1 -->
-                <div class="team-group active">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/carmine.jpg" alt="Carmine Shinkō De Rosario" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Carmine Shinkō De Rosario</h4>
-                        <p>Educatore psicomotorio, monaco zen<br>(responsabile struttura)</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/marica.jpg" alt="Marica Barbieri" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Marica Barbieri</h4>
-                        <p>Psicologa, insegnante di sostegno<br>(psicologa struttura)</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/manuela.jpg" alt="Manuela Fiscarelli" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Manuela Fiscarelli</h4>
-                        <p>Operatrice cioccolateria<br>(segretaria struttura)</p>
-                    </div>
-                </div>
-                <!-- Gruppo 2 -->
-                <div class="team-group">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/giuliano.jpg" alt="Giuliano Curati" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Giuliano Curati</h4>
-                        <p>Maestro gelataio<br>(responsabile gelateria)</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/gino.jpg" alt="Gino Fratini" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Gino Fratini</h4>
-                        <p>Maestro gelataio<br>(responsabile gelateria)</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/maurizio.jpg" alt="Maurizio Anshu Ferro" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Maurizio Anshu Ferro</h4>
-                        <p>Insegnante zen<br>(responsabile shōdō)</p>
-                    </div>
-                </div>
-                <!-- Gruppo 3 -->
-                <div class="team-group">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/stefano.jpg" alt="Stefano Fedolfi" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Stefano Fedolfi</h4>
-                        <p>Ceramista</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/emilio.jpg" alt="Emilio Moschini" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Emilio Moschini</h4>
-                        <p>Falegname</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="imgs/people/paolo.jpg" alt="Paolo Bellini" onerror="this.src='imgs/people/default.jpg'">
-                        </div>
-                        <h4>Paolo Bellini</h4>
-                        <p>Pittore</p>
-                    </div>
-                </div>
+            <div class="team-carousel" id="teamCarousel">
+                <!-- I gruppi saranno generati dinamicamente da JavaScript -->
             </div>
         </div>
     </section>
+
+    <!-- Team Members Data -->
+    <script>
+    const teamMembersData = [
+        {
+            image: "imgs/people/carmine.jpg",
+            alt: "Carmine Shinkō De Rosario",
+            name: "Carmine Shinkō De Rosario",
+            role: "Educatore psicomotorio, monaco zen<br>(responsabile struttura)"
+        },
+        {
+            image: "imgs/people/marica.jpg",
+            alt: "Marica Barbieri",
+            name: "Marica Barbieri",
+            role: "Psicologa, insegnante di sostegno<br>(psicologa struttura)"
+        },
+        {
+            image: "imgs/people/manuela.jpg",
+            alt: "Manuela Fiscarelli",
+            name: "Manuela Fiscarelli",
+            role: "Operatrice cioccolateria<br>(segretaria struttura)"
+        },
+        {
+            image: "imgs/people/giuliano.jpg",
+            alt: "Giuliano Curati",
+            name: "Giuliano Curati",
+            role: "Maestro gelataio<br>(responsabile gelateria)"
+        },
+        {
+            image: "imgs/people/maurizio.jpg",
+            alt: "Maurizio Anshu Ferro",
+            name: "Maurizio Anshu Ferro",
+            role: "Insegnante zen<br>(responsabile shōdō)"
+        },
+        {
+            image: "imgs/people/stefano.jpg",
+            alt: "Stefano Fedolfi",
+            name: "Stefano Fedolfi",
+            role: "Ceramista"
+        },
+        {
+            image: "imgs/people/emilio.jpg",
+            alt: "Emilio Moschini",
+            name: "Emilio Moschini",
+            role: "Falegname"
+        },
+        {
+            image: "imgs/people/paolo.jpg",
+            alt: "Paolo Bellini",
+            name: "Paolo Bellini",
+            role: "Pittore"
+        }
+    ];
+    </script>
 
     <!-- Projects Section -->
     <section class="projects-section" id="progetti">
         <div class="container">
             <div class="section-header">
-                <h2>I Nostri Progetti</h2>
+                <h2>Cosa Facciamo</h2>
                 <div class="divider"></div>
-                <p class="section-subtitle">Costruiamo insieme un futuro di opportunità e crescita</p>
+                <p class="section-subtitle">Tre percorsi per coltivare il benessere, valorizzare i talenti e costruire comunità</p>
+            </div>
+            
+            <div class="projects-intro">
+                
+                <div class="projects-categories">
+                    <a href="listaattivitacasalaboratorio.html" class="category-link">
+                        <div class="category-box">
+                            <div class="category-logo">
+                                <img src="imgs/logo_2.png" alt="Casa Laboratorio">
+                            </div>
+                            <h4>Laboratori Artigianali</h4>
+                            <p>Inclusione sociale tramite arte e artigianato</p>
+                        </div>
+                    </a>
+                    
+                    <a href="progetti.html?nome=comunita" class="category-link">
+                        <div class="category-box">
+                            <div class="category-logo">
+                                <img src="imgs/logo_3.png" alt="Comunità Residenziale">
+                            </div>
+                            <h4>Comunità Residenziale</h4>
+                            <p>Percorso di autonomia e crescita personale</p>
+                        </div>
+                    </a>
+                    
+                    <a href="listaattivitadojozen.html" class="category-link">
+                        <div class="category-box">
+                            <div class="category-logo">
+                                <img src="imgs/logo_1.png" alt="Kuge Dojo Zen">
+                            </div>
+                            <h4>Pratiche Zen</h4>
+                            <p>Benessere psicofisico attraverso Qigong, Shōdō e Zazen</p>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <!-- Ama et Labora -->
+            <!-- Casa Laboratorio -->
             <div class="project-showcase">
                 <div class="project-image">
-                    <img src="imgs/logo2.jpg" alt="Ama et Labora">
+                    <img src="imgs/logo2.jpg" alt="Casa Laboratorio Ama et Labora">
                 </div>
                 <div class="project-content">
-                    <h3>Ama et Labora - Casa Laboratorio</h3>
-                    <p class="project-subtitle">Laboratori e Arti Zen per la Crescita Personale</p>
-                    <p>La <strong>Casa Laboratorio</strong> della <strong>Fiori Celesti APS</strong>, associazione zen impegnata nel sociale, ospita diversi laboratori protetti con l'intento di dare a chi si approccia a queste esperienze un'<strong>accoglienza di tipo familiare e formativa</strong> al tempo stesso.</p>
-                    <p>L'appassionata esperienza di artigiani e operatori inserita nel percorso educativo psicomotorio <strong>"Ama et Labora"</strong>, introduce i partecipanti ai linguaggi non solo del sapere ma anche del <strong>saper fare</strong> e del <strong>saper fare insieme agli altri</strong>, avviando un naturale processo di <strong>integrazione sociale</strong>, sviluppo delle proprie capacità motorie, pratiche e relazionali.</p>
-                    <p>Tali obiettivi e contenuti didattici, messi a punto e supervisionati costantemente dalla nostra psicologa e dal nostro educatore psicomotorio, sono indirizzati a favorire un miglioramento globale della <strong>qualità della vita</strong> e al massimo sviluppo possibile dell'<strong>autonomia personale</strong>.</p>
-                    <a href="listaattivita.html" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                    <h3>Laboratori Artigianali</h3>
+                    <p class="project-subtitle">Casa Laboratorio "Ama et Labora"</p>
+                    <p>La <strong>Casa Laboratorio</strong> ospita laboratori artigianali protetti di <strong>falegnameria, ceramica, cioccolateria, gelateria e orticoltura</strong>. Attraverso il percorso educativo psicomotorio <strong>"Ama et Labora"</strong>, valorizziamo il <strong>saper fare insieme agli altri</strong>, promuovendo integrazione sociale, autonomia personale e crescita attraverso il lavoro manuale e l'arte.</p>
+                    <a href="listaattivitacasalaboratorio.html" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -252,10 +267,23 @@
                     <img src="imgs/attivita/comunita/1.jpg" alt="Comunità Fiori Celesti">
                 </div>
                 <div class="project-content">
-                    <h3>Comunità Fiori Celesti - Officina dei Talenti</h3>
-                    <p class="project-subtitle">DURANTE E DOPO DI NOI - "Per aspera ad astra"</p>
-                    <p>Il progetto di Comunità Residenziale si basa sull'idea che ogni persona è in viaggio verso la propria realizzazione umana e che può trovare nella vita comunitaria compagni di viaggio e figure di riferimento per sviluppare a pieno le proprie capacità personali e sociali.</p>
+                    <h3>Comunità Residenziale</h3>
+                    <p class="project-subtitle">Comunità Fiori Celesti - Officina dei Talenti</p>
+                    <p>Il progetto di <strong>Comunità Residenziale</strong> offre un luogo dove ogni persona può trovare <strong>compagni di viaggio</strong> e <strong>figure di riferimento</strong> per sviluppare a pieno le proprie capacità personali e sociali, in un ambiente familiare che sostiene il cammino verso la realizzazione umana.</p>
                     <a href="progetti.html?nome=comunita" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Kuge Dojo Zen -->
+            <div class="project-showcase">
+                <div class="project-image">
+                    <img src="imgs/attivita/qigong/1.jpg" alt="Kuge Dojo Zen">
+                </div>
+                <div class="project-content">
+                    <h3>Pratiche Zen</h3>
+                    <p class="project-subtitle">Kuge Dojo 空華道場</p>
+                    <p>Il <strong>Kuge Dojo</strong> (Dojo del Fiore Celeste) è lo spazio dedicato alle <strong>pratiche zen</strong>: <strong>Qigong</strong>, <strong>Shōdō</strong> (calligrafia giapponese) e <strong>meditazione Zazen</strong>. Attraverso queste discipline millenarie coltiviamo l'<strong>armonia tra corpo, mente e spirito</strong>, la consapevolezza e il benessere interiore.</p>
+                    <a href="listaattivitadojozen.html" class="btn btn-primary">Scopri di più <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -275,7 +303,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Telefono</h4>
+                            <h4>Telefono / WhatsApp</h4>
                             <p><a href="tel:+393930778678">+39 393 077 8678</a></p>
                         </div>
                     </div>
@@ -326,7 +354,7 @@
                 <div class="footer-contacts">
                     <h4>Contatti</h4>
                     <p><i class="fas fa-map-marker-alt"></i> <span>Viale Fidenza 12G, Tabiano Bagni (PR)</span></p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+393930778678">+39 393 077 8678</a></p>
+                    <p><i class="fas fa-phone"></i> <i class="fab fa-whatsapp"></i> <a href="tel:+393930778678">+39 393 077 8678</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:fioricelestiaps@gmail.com">fioricelestiaps@gmail.com</a></p>
                 </div>
             </div>

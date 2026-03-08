@@ -1125,6 +1125,82 @@ section[id] {
     font-style: italic;
 }
 
+.projects-intro {
+    margin: 2.5rem auto 3rem;
+    text-align: center;
+}
+
+.projects-intro .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0 0 2.5rem 0;
+}
+
+.projects-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-link {
+    text-decoration: none;
+    display: flex;
+    color: inherit;
+    height: 100%;
+}
+
+.category-box {
+    background: white;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-link:hover .category-box {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.category-logo {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.category-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-box h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
+    font-weight: 600;
+    padding-left: 0;
+}
+
+.category-box p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+    padding-left: 0;
+}
+
 .project-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2724,7 +2800,7 @@ section[id] {
     }
 
     .nav.active {
-        max-height: 400px;
+        max-height: 600px;
     }
 
     .nav ul {
@@ -2950,6 +3026,22 @@ section[id] {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 1.5rem;
+    }
+
+    .projects-categories {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .category-box {
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .category-logo {
+        width: 50px;
+        height: 50px;
+        top: -12px;
+        left: 12px;
     }
 
     .project-content {
