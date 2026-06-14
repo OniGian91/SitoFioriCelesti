@@ -87,8 +87,8 @@ const activities = {
         description1: "Impara a creare il <strong>vero gelato artigianale italiano</strong> con i nostri corsi di gelateria. Guidato dal <strong>maestro gelatiere Giuliano Curati</strong>, scoprirai i segreti della <strong>mantecazione</strong>, del <strong>bilanciamento degli ingredienti</strong> e della creazione di <strong>gusti unici e genuini</strong>.",
         description2: "Il laboratorio è dotato di <strong>attrezzature professionali</strong> per la produzione del gelato artigianale. I corsi sono aperti a tutti, dai ragazzi agli adulti appassionati.",
         folder: "gelateria",
-        carouselImages: 6,
-        galleryImages: 6,
+        carouselImages: 7,
+        galleryImages: 7,
         gallerySubtitle: "Scopri il nostro laboratorio di gelateria attraverso le immagini",
         schedule: [
             {
