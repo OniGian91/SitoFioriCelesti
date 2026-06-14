@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
 /* ===================================
    Global Styles & Reset
    =================================== */
@@ -8,8 +10,9 @@
 }
 
 :root {
-    --primary-color: #4c9aff;
-    --secondary-color: #ff4757;
+    --primary-color: #012EBA;
+    --footer-accent: var(--footer-accent);
+    --secondary-color: #C3040F;
     --accent-color: #7b68ee;
     --dark-color: #2c3e50;
     --dark-bg: #ffffff;
@@ -24,7 +27,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-color);
@@ -270,7 +273,7 @@ section[id] {
 }
 
 .btn-primary {
-    background: var(--secondary-color);
+    background: linear-gradient(135deg, var(--secondary-color), #ff6b7a);
     color: white;
     box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
 }
@@ -283,7 +286,7 @@ section[id] {
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(255, 71, 87, 0.5);
-    background: #ff6b7a;
+    background: linear-gradient(135deg, #ff6b7a, var(--secondary-color));
 }
 
 .btn-primary:hover i {
@@ -291,13 +294,13 @@ section[id] {
 }
 
 .btn-secondary {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), #5c9fff);
     color: white;
     box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
 }
 
 .btn-secondary:hover {
-    background: #6ab0ff;
+    background: linear-gradient(135deg, #5c9fff, var(--primary-color));
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(76, 154, 255, 0.5);
 }
@@ -2545,9 +2548,9 @@ section[id] {
 }
 
 .footer-social a:hover {
-    background: var(--primary-color);
+    background: var(--footer-accent);
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(76, 154, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(137, 180, 255, 0.4);
 }
 
 .footer-contacts {
@@ -2555,7 +2558,7 @@ section[id] {
 }
 
 .footer-contacts h4 {
-    color: var(--primary-color);
+    color: var(--footer-accent);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -2568,7 +2571,7 @@ section[id] {
 }
 
 .footer-contacts p i {
-    color: var(--primary-color);
+    color: var(--footer-accent);
     width: 20px;
     flex-shrink: 0;
 }
@@ -2580,7 +2583,7 @@ section[id] {
 }
 
 .footer-contacts a:hover {
-    color: var(--primary-color);
+    color: var(--footer-accent);
 }
 
 .footer-contacts p span {
@@ -2621,13 +2624,13 @@ section[id] {
 }
 
 .copyright-banner a {
-    color: var(--primary-color);
+    color: var(--footer-accent);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .copyright-banner a:hover {
-    color: var(--accent-color);
+    color: white;
     text-decoration: underline;
 }
 
@@ -2737,7 +2740,7 @@ section[id] {
 }
 
 .btn-share {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), #5c9fff);
     color: white;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -2749,13 +2752,13 @@ section[id] {
     gap: 0.5rem;
     transition: var(--transition);
     font-family: var(--font-primary);
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
 }
 
 .btn-share:hover {
-    background: var(--primary-color);
-    opacity: 0.9;
+    background: linear-gradient(135deg, #5c9fff, var(--primary-color));
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(76, 154, 255, 0.5);
 }
 
 .btn-share i {
@@ -3468,7 +3471,7 @@ section[id] {
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3656,7 +3659,7 @@ section[id] {
 .step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-radius: 50%;
     display: flex;
