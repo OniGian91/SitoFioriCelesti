@@ -820,14 +820,17 @@ section[id] {
     font-size: 0.95rem;
     line-height: 1.7;
     margin-top: 2rem;
-    padding: 1.2rem;
-    background: rgba(123, 104, 238, 0.05);
-    border-left: 3px solid var(--accent-color);
-    border-radius: 5px;
+    padding: 1.2rem 1.5rem;
+    background: rgba(1, 46, 186, 0.05);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
 }
 
 .chi-siamo-text .wabi-sabi-note em {
     font-size: 0.95rem;
+    color: var(--primary-color);
+    font-style: italic;
 }
 
 /* ===================================
@@ -2538,19 +2541,20 @@ section[id] {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--primary-color), #5c9fff);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     transition: var(--transition);
     color: white;
+    box-shadow: 0 4px 15px rgba(76, 154, 255, 0.3);
 }
 
 .footer-social a:hover {
-    background: var(--footer-accent);
+    background: linear-gradient(135deg, #5c9fff, var(--primary-color));
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(137, 180, 255, 0.4);
+    box-shadow: 0 6px 20px rgba(76, 154, 255, 0.5);
 }
 
 .footer-contacts {
