@@ -803,6 +803,59 @@ if (news3Slides.length > 0) {
     }, 5000);
 }
 
+// News 4 Carousel (Peschici 2026)
+let news4CurrentSlide = 0;
+const news4Slides = document.querySelectorAll('#news4CarouselTrack .carousel-slide');
+const news4Dots = document.querySelectorAll('#news4CarouselDots .dot');
+const news4PrevBtn = document.getElementById('news4CarouselPrev');
+const news4NextBtn = document.getElementById('news4CarouselNext');
+
+function showNews4Slide(n) {
+    if (!news4Slides.length) return;
+
+    if (n >= news4Slides.length) news4CurrentSlide = 0;
+    if (n < 0) news4CurrentSlide = news4Slides.length - 1;
+
+    news4Slides.forEach(slide => slide.classList.remove('active'));
+    news4Dots.forEach(dot => dot.classList.remove('active'));
+
+    news4Slides[news4CurrentSlide].classList.add('active');
+    if (news4Dots[news4CurrentSlide]) {
+        news4Dots[news4CurrentSlide].classList.add('active');
+    }
+}
+
+function nextNews4Slide() {
+    news4CurrentSlide++;
+    showNews4Slide(news4CurrentSlide);
+}
+
+function prevNews4Slide() {
+    news4CurrentSlide--;
+    showNews4Slide(news4CurrentSlide);
+}
+
+if (news4PrevBtn) {
+    news4PrevBtn.addEventListener('click', prevNews4Slide);
+}
+
+if (news4NextBtn) {
+    news4NextBtn.addEventListener('click', nextNews4Slide);
+}
+
+news4Dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        news4CurrentSlide = index;
+        showNews4Slide(news4CurrentSlide);
+    });
+});
+
+if (news4Slides.length > 0) {
+    setInterval(() => {
+        nextNews4Slide();
+    }, 5000);
+}
+
 // ===================================
 // Share News Function
 // ===================================
