@@ -28,7 +28,14 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="index.html#progetti" class="active">Cosa Facciamo</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#progetti" class="active">Progetti <i class="fas fa-chevron-down nav-chevron"></i></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="gelateria.html"><i class="fas fa-ice-cream"></i> Gelateria</a></li>
+                                <li><a href="listaattivitacasalaboratorio.html" class="active"><i class="fas fa-hammer"></i> Casa Laboratorio</a></li>
+                                <li><a href="listaattivitadojozen.html"><i class="fas fa-spa"></i> Kuge Dojo Zen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.html#contatti">Contatti</a></li>
                         <li><a href="news.html">News</a></li>
                         <li class="mobile-only"><a href="volontariato.html">Volontariato</a></li>
@@ -44,16 +51,65 @@
         </div>
     </header>
 
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="imgs/attivita/falegnameria/1.jpg" alt="Casa Laboratorio Ama et Labora" style="object-position: center 30%;">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-corner tl"></div>
+        <div class="page-hero-corner br"></div>
+        <div class="page-hero-corner tr"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="page-hero-badge">Artigianato &bull; Creatività &bull; Inclusione</span>
+                <h1 class="page-hero-title">
+                    <span class="hw"><span>Casa</span></span>
+                    <span class="hw"><span>Laboratorio</span></span>
+                    <span class="hw"><span>Ama&nbsp;et&nbsp;Labora</span></span>
+                </h1>
+                <p class="page-hero-subtitle">Laboratori artigianali protetti dove il fare insieme diventa strumento di crescita, inclusione e comunità.</p>
+                <div class="page-hero-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="page-stats">
+        <div class="page-stats-deco page-stats-deco-1"></div>
+        <div class="page-stats-deco page-stats-deco-2"></div>
+        <div class="container">
+            <div class="page-stats-grid">
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="7">0</span>
+                        <span class="page-stat-suf">&nbsp;</span>
+                    </div>
+                    <div class="page-stat-label">Laboratori artigianali</div>
+                </div>
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="5">0</span>
+                        <span class="page-stat-suf">&nbsp;</span>
+                    </div>
+                    <div class="page-stat-label">Giorni a settimana</div>
+                </div>
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="100">0</span>
+                        <span class="page-stat-suf">%</span>
+                    </div>
+                    <div class="page-stat-label">Inclusione sociale</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Activities Section -->
     <section class="activities" id="attivita">
         <div class="container">
-            <div class="section-header">
-                <h2>Laboratori Artigianali</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Casa Laboratorio "Ama et Labora"</p>
-            </div>
 
-            <div class="activities-intro">
+            <div class="activities-intro g-reveal">
                 <div class="activities-intro-image">
                     <img src="imgs/logo2.jpg" alt="Casa Laboratorio Ama et Labora">
                 </div>
@@ -69,13 +125,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-hammer"></i></div>
+
             <!-- Falegnameria -->
-            <div class="activity-showcase">
+            <div class="activity-showcase g-reveal-l">
                 <div class="activity-image">
                     <img src="imgs/attivita/falegnameria/1.jpg" alt="Falegnameria">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-hammer"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Falegnameria</h3>
@@ -84,13 +139,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-candy-cane"></i></div>
+
             <!-- Cioccolateria -->
-            <div class="activity-showcase reverse alt-bg">
+            <div class="activity-showcase reverse alt-bg g-reveal-r">
                 <div class="activity-image">
                     <img src="imgs/attivita/cioccolateria/1.jpg" alt="Cioccolateria">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-candy-cane"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Cioccolateria</h3>
@@ -99,13 +153,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-seedling"></i></div>
+
             <!-- Orticoltura -->
-            <div class="activity-showcase">
+            <div class="activity-showcase g-reveal-l">
                 <div class="activity-image">
                     <img src="imgs/attivita/orticoltura/1.jpg" alt="Orticoltura">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-seedling"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Orticoltura</h3>
@@ -114,13 +167,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-ice-cream"></i></div>
+
             <!-- Gelateria -->
-            <div class="activity-showcase reverse alt-bg">
+            <div class="activity-showcase reverse alt-bg g-reveal-r">
                 <div class="activity-image">
                     <img src="imgs/attivita/gelateria/7.jpg" alt="Gelateria">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-ice-cream"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Gelateria</h3>
@@ -129,13 +181,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-mug-hot"></i></div>
+
             <!-- Ceramica -->
-            <div class="activity-showcase">
+            <div class="activity-showcase g-reveal-l">
                 <div class="activity-image">
                     <img src="imgs/attivita/ceramica/1.jpg" alt="Ceramica">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Ceramica</h3>
@@ -144,13 +195,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-users"></i></div>
+
             <!-- Spazio Giovani -->
-            <div class="activity-showcase reverse alt-bg">
+            <div class="activity-showcase reverse alt-bg g-reveal-r">
                 <div class="activity-image">
                     <img src="imgs/attivita/spazio giovani/1.jpg" alt="Spazio Giovani">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-users"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Spazio Giovani</h3>
@@ -159,13 +209,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-van-shuttle"></i></div>
+
             <!-- Gite e Vacanze -->
-            <div class="activity-showcase">
+            <div class="activity-showcase g-reveal-l">
                 <div class="activity-image">
                     <img src="imgs/attivita/gite e vacanze/1.jpg" alt="Gite e Vacanze">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-van-shuttle"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Gite e Vacanze</h3>
@@ -175,7 +224,7 @@
             </div>
 
             <!-- Orari Settimanali -->
-            <div class="schedule-section">
+            <div class="schedule-section g-reveal">
                 <h3><i class="fas fa-calendar-alt"></i> Orari e Referenti</h3>
                 <div class="schedule-grid">
                     <div class="day-card">
@@ -202,7 +251,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>
@@ -219,7 +267,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>
@@ -236,7 +283,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>
@@ -253,7 +299,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>

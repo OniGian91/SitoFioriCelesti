@@ -28,7 +28,14 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="index.html#progetti" class="active">Cosa Facciamo</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#progetti" class="active">Progetti <i class="fas fa-chevron-down nav-chevron"></i></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="gelateria.html"><i class="fas fa-ice-cream"></i> Gelateria</a></li>
+                                <li><a href="listaattivitacasalaboratorio.html"><i class="fas fa-hammer"></i> Casa Laboratorio</a></li>
+                                <li><a href="listaattivitadojozen.html" class="active"><i class="fas fa-spa"></i> Kuge Dojo Zen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.html#contatti">Contatti</a></li>
                         <li><a href="news.html">News</a></li>
                         <li class="mobile-only"><a href="volontariato.html">Volontariato</a></li>
@@ -44,33 +51,82 @@
         </div>
     </header>
 
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="imgs/attivita/qigong/2.jpg" alt="Kuge Dojo Zen" style="object-position: center 30%;">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-corner tl"></div>
+        <div class="page-hero-corner br"></div>
+        <div class="page-hero-corner tr"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="page-hero-badge">Zen &bull; Qigong &bull; Shōdō</span>
+                <h1 class="page-hero-title">
+                    <span class="hw"><span>Kuge</span></span>
+                    <span class="hw"><span>Dojo</span></span>
+                    <span class="hw"><span>空華道場</span></span>
+                </h1>
+                <p class="page-hero-subtitle">Pratiche tradizionali zen per l'armonia di corpo, mente e spirito.<br>Un percorso di crescita interiore attraverso il movimento e la scrittura.</p>
+                <div class="page-hero-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="page-stats">
+        <div class="page-stats-deco page-stats-deco-1"></div>
+        <div class="page-stats-deco page-stats-deco-2"></div>
+        <div class="container">
+            <div class="page-stats-grid">
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="2">0</span>
+                        <span class="page-stat-suf">&nbsp;</span>
+                    </div>
+                    <div class="page-stat-label">Pratiche zen</div>
+                </div>
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="3">0</span>
+                        <span class="page-stat-suf">&nbsp;</span>
+                    </div>
+                    <div class="page-stat-label">Sessioni settimanali</div>
+                </div>
+                <div class="page-stat-item">
+                    <div class="page-stat-number">
+                        <span class="page-stat-num" data-count="100">0</span>
+                        <span class="page-stat-suf">%</span>
+                    </div>
+                    <div class="page-stat-label">Benessere psicofisico</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Activities Section -->
     <section class="activities" id="attivita">
         <div class="container">
-            <div class="section-header">
-                <h2>Pratiche Zen</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Kuge Dojo 空華道場</p>
-            </div>
+           
 
-            <div class="activities-intro">
+            <div class="activities-intro g-reveal">
                 <div class="activities-intro-image">
                     <img src="imgs/attivita/qigong/2.jpg" alt="Kuge Dojo Zen">
                 </div>
                 <div class="activities-intro-text">
                     <p>Il <strong>Kuge Dojo</strong> (空華道場, "Dojo del Fiore Celeste") è lo spazio dedicato alle <strong>pratiche zen</strong> presso la Fiori Celesti APS. Qui si coltivano le <strong>arti tradizionali zen</strong> che armonizzano corpo, mente e spirito attraverso la disciplina, la concentrazione e la ricerca interiore.</p>
-                    <p>Attraverso il <strong>Qigong</strong> (気功, "lavoro sull'energia") e lo <strong>Shōdō</strong> (書道, "via della scrittura"), i partecipanti intraprendono un percorso di <strong>crescita personale</strong> che unisce il benessere fisico alla <strong>pratica meditativa</strong>, riscopren do l'armonia tra gesto e presenza, tra forma e vuoto.</p>
+                    <p>Attraverso il <strong>Qigong</strong> (気功, "lavoro sull'energia") e lo <strong>Shōdō</strong> (書道, "via della scrittura"), i partecipanti intraprendono un percorso di <strong>crescita personale</strong> che unisce il benessere fisico alla <strong>pratica meditativa</strong>, riscoprendo l'armonia tra gesto e presenza, tra forma e vuoto.</p>
                     <p>Le pratiche zen non sono solo tecniche, ma <strong>vie di trasformazione</strong> che insegnano a coltivare la <strong>consapevolezza</strong>, la <strong>pazienza</strong> e l'<strong>accettazione dell'imperfezione</strong> come parte del cammino verso la realizzazione di sé.</p>
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-spa"></i></div>
+
             <!-- Qigong -->
-            <div class="activity-showcase">
+            <div class="activity-showcase g-reveal-l">
                 <div class="activity-image">
                     <img src="imgs/attivita/qigong/1.jpg" alt="Qigong">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-spa"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>Qigong (Yoga Cinese)</h3>
@@ -79,13 +135,12 @@
                 </div>
             </div>
 
+            <div class="page-divider g-reveal"><i class="fas fa-brush"></i></div>
+
             <!-- Shōdō -->
-            <div class="activity-showcase reverse alt-bg">
+            <div class="activity-showcase reverse alt-bg g-reveal-r">
                 <div class="activity-image">
                     <img src="imgs/attivita/shodo/1.jpg" alt="Shōdō">
-                    <div class="activity-icon-badge">
-                        <i class="fas fa-brush"></i>
-                    </div>
                 </div>
                 <div class="activity-content">
                     <h3>SHŌDŌ (Calligrafia Giapponese)</h3>
@@ -95,7 +150,7 @@
             </div>
 
             <!-- Orari Settimanali -->
-            <div class="schedule-section">
+            <div class="schedule-section g-reveal">
                 <h3><i class="fas fa-calendar-alt"></i> Orari e Referenti</h3>
                 <div class="schedule-grid">
                     <div class="day-card">
@@ -121,7 +176,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>
@@ -138,7 +192,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="day-card">
                         <div class="day-header">
                             <i class="fas fa-calendar-day"></i>
@@ -149,7 +202,7 @@
                                 <span class="badge">Adulti</span>
                                 <div class="activity-info">
                                     <p class="activity-name">Shodo (Calligrafia Giapponese)</p>
-                    <p class="instructor">con Maurizio Anshu</p>
+                                    <p class="instructor">con Maurizio Anshu</p>
                                     <p class="time"><i class="fas fa-clock"></i> Terzo venerdì del mese - 19:30 - 20:00</p>
                                 </div>
                             </div>

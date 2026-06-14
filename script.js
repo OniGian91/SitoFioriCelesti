@@ -50,6 +50,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Dropdown toggle — desktop only (mobile shows items always)
+    document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (window.innerWidth > 768) {
+                const li = this.closest('.has-dropdown');
+                const isOpen = li.classList.contains('open');
+                document.querySelectorAll('.has-dropdown.open').forEach(function(el) {
+                    if (el !== li) el.classList.remove('open');
+                });
+                li.classList.toggle('open', !isOpen);
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside (desktop only)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth > 768 && !e.target.closest('.has-dropdown')) {
+            document.querySelectorAll('.has-dropdown.open').forEach(function(el) {
+                el.classList.remove('open');
+            });
+        }
+    });
+
     // Close menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav a');
     navLinks.forEach(link => {
@@ -167,71 +191,111 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-// Funzione per creare i gruppi dinamici del team
+// Team slider: 4 card per pagina (2 su mobile), scorrono verso sinistra
 function createTeamGroups() {
-    const teamCarousel = document.getElementById('teamCarousel');
+    var teamCarousel = document.getElementById('teamCarousel');
     if (!teamCarousel || typeof teamMembersData === 'undefined') return;
-    
-    // Mescola casualmente i membri del team
-    const shuffledMembers = shuffleArray(teamMembersData);
-    
-    // Crea gruppi da 3 membri
-    const groupsData = [];
-    for (let i = 0; i < shuffledMembers.length; i += 3) {
-        groupsData.push(shuffledMembers.slice(i, i + 3));
+
+    var isMobile = window.innerWidth <= 600;
+    var PER_PAGE = isMobile ? 2 : 4;
+    var INTERVAL_MS = 4000;
+    var ANIM_MS = 650;
+
+    var members = shuffleArray(teamMembersData);
+
+    // Divide in pagine da PER_PAGE
+    var pages = [];
+    for (var i = 0; i < members.length; i += PER_PAGE) {
+        pages.push(members.slice(i, i + PER_PAGE));
     }
-    
-    // Genera l'HTML per i gruppi
-    teamCarousel.innerHTML = '';
-    groupsData.forEach((group, index) => {
-        const groupDiv = document.createElement('div');
-        groupDiv.className = 'team-group' + (index === 0 ? ' active' : '');
-        
-        group.forEach(member => {
-            const memberDiv = document.createElement('div');
-            memberDiv.className = 'team-member';
-            memberDiv.innerHTML = `
-                <div class="team-photo">
-                    <img src="${member.image}" alt="${member.alt}" onerror="this.src='imgs/people/default.jpg'">
-                </div>
-                <h4>${member.name}</h4>
-                <p>${member.role}</p>
-            `;
-            groupDiv.appendChild(memberDiv);
+
+    var wrapper = document.createElement('div');
+    wrapper.className = 'team-slider-wrapper';
+    teamCarousel.appendChild(wrapper);
+
+    var pageIdx = 0;
+    var isAnimating = false;
+    var currentSlide = null;
+
+    function makeSlide(pageMembers, alreadyVisible) {
+        var slide = document.createElement('div');
+        slide.className = 'team-grid';
+        pageMembers.forEach(function(member, i) {
+            var card = document.createElement('div');
+            card.className = 'team-card' + (alreadyVisible ? ' visible' : '');
+            if (!alreadyVisible) card.style.transitionDelay = (i * 0.09) + 's';
+            card.innerHTML =
+                '<div class="team-photo">' +
+                    '<img src="' + member.image + '" alt="' + member.alt + '" onerror="this.src=\'imgs/people/default.jpg\'">' +
+                '</div>' +
+                '<h4>' + member.name + '</h4>' +
+                '<p>' + member.role + '</p>';
+            slide.appendChild(card);
         });
-        
-        teamCarousel.appendChild(groupDiv);
-    });
-    
-    // Aggiorna la selezione dei gruppi
-    teamGroups = document.querySelectorAll('.team-group');
+        return slide;
+    }
+
+    // Prima pagina — invisibile finché non entra in viewport
+    currentSlide = makeSlide(pages[0], false);
+    wrapper.appendChild(currentSlide);
+
+    // Animazione di ingresso + avvio slider
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                currentSlide.querySelectorAll('.team-card').forEach(function(card, i) {
+                    setTimeout(function() { card.classList.add('visible'); }, i * 90);
+                });
+                observer.unobserve(wrapper);
+                if (pages.length > 1) {
+                    setTimeout(function() {
+                        setInterval(slideToNext, INTERVAL_MS);
+                    }, INTERVAL_MS);
+                }
+            }
+        });
+    }, { threshold: 0.2 });
+    observer.observe(wrapper);
+
+    function slideToNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        var nextIdx = (pageIdx + 1) % pages.length;
+        var nextSlide = makeSlide(pages[nextIdx], true);
+
+        // Posiziona il prossimo slide fuori a destra
+        nextSlide.style.position = 'absolute';
+        nextSlide.style.top = '0';
+        nextSlide.style.left = '100%';
+        nextSlide.style.width = '100%';
+        wrapper.appendChild(nextSlide);
+
+        void wrapper.offsetWidth; // reflow
+
+        var t = 'transform ' + ANIM_MS + 'ms cubic-bezier(0.4,0,0.2,1)';
+        currentSlide.style.transition = t;
+        nextSlide.style.transition = t;
+        currentSlide.style.transform = 'translateX(-100%)';
+        nextSlide.style.transform = 'translateX(-100%)'; // da left:100% → 0
+
+        setTimeout(function() {
+            wrapper.removeChild(currentSlide);
+            nextSlide.style.position = '';
+            nextSlide.style.top = '';
+            nextSlide.style.left = '';
+            nextSlide.style.width = '';
+            nextSlide.style.transition = '';
+            nextSlide.style.transform = '';
+            currentSlide = nextSlide;
+            pageIdx = nextIdx;
+            isAnimating = false;
+        }, ANIM_MS + 40);
+    }
 }
 
-function showTeamGroup(n) {
-    if (!teamGroups.length) return;
-    
-    if (n >= teamGroups.length) currentTeamGroup = 0;
-    if (n < 0) currentTeamGroup = teamGroups.length - 1;
-    
-    teamGroups.forEach(group => group.classList.remove('active'));
-    teamGroups[currentTeamGroup].classList.add('active');
-}
-
-function nextTeamGroup() {
-    currentTeamGroup++;
-    showTeamGroup(currentTeamGroup);
-}
-
-// Inizializza i gruppi del team quando il DOM è pronto
 if (document.getElementById('teamCarousel')) {
     createTeamGroups();
-    
-    // Auto-advance team carousel every 6 seconds
-    if (teamGroups.length > 1) {
-        setInterval(() => {
-            nextTeamGroup();
-        }, 6000);
-    }
 }
 
 // ===================================
@@ -972,6 +1036,101 @@ function toggleAccordion(header) {
         content.classList.add('active');
     }
 }
+
+// ===================================
+// Inner Page Animations (hero, stats, reveal, gallery)
+// ===================================
+(function () {
+    var ioOpts = { threshold: 0.15 };
+
+    /* Scroll reveal: .g-reveal / .g-reveal-l / .g-reveal-r */
+    var revealEls = document.querySelectorAll('.g-reveal, .g-reveal-l, .g-reveal-r');
+    if (revealEls.length) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+            });
+        }, ioOpts);
+        revealEls.forEach(function (el) { revealObs.observe(el); });
+    }
+
+    /* Photo underline */
+    var pu = document.querySelector('.page-photo-underline');
+    if (pu) {
+        new IntersectionObserver(function (entries, obs) {
+            if (entries[0].isIntersecting) { pu.classList.add('in'); obs.disconnect(); }
+        }, { threshold: 0.5 }).observe(pu);
+    }
+
+    /* Photo grid stagger */
+    var photoItems = document.querySelectorAll('.page-photo-item');
+    if (photoItems.length) {
+        var photoObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    var i = Array.prototype.indexOf.call(photoItems, e.target);
+                    setTimeout(function () { e.target.classList.add('in'); }, i * 100);
+                    photoObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        photoItems.forEach(function (el) { photoObs.observe(el); });
+    }
+
+    /* Stats counters */
+    var statsSection = document.querySelector('.page-stats');
+    var statItems = document.querySelectorAll('.page-stat-item');
+    if (statsSection && statItems.length) {
+        new IntersectionObserver(function (entries, obs) {
+            if (!entries[0].isIntersecting) return;
+            obs.disconnect();
+            statItems.forEach(function (item, i) {
+                setTimeout(function () {
+                    item.classList.add('in');
+                    var numEl = item.querySelector('.page-stat-num');
+                    if (!numEl) return;
+                    var target = parseInt(numEl.dataset.count, 10);
+                    if (!target) return;
+                    var start = null, duration = 1400;
+                    requestAnimationFrame(function step(ts) {
+                        if (!start) start = ts;
+                        var p = Math.min((ts - start) / duration, 1);
+                        numEl.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+                        if (p < 1) requestAnimationFrame(step);
+                    });
+                }, i * 130);
+            });
+        }, { threshold: 0.25 }).observe(statsSection);
+    }
+
+    /* Hero parallax */
+    var heroBg = document.querySelector('.page-hero-bg img');
+    if (heroBg) {
+        window.addEventListener('scroll', function () {
+            var s = window.pageYOffset;
+            if (s < window.innerHeight) {
+                heroBg.style.transform = 'scale(1.04) translateY(' + (s * 0.22) + 'px)';
+            }
+        }, { passive: true });
+    }
+})();
+
+// ===================================
+// Section-hero entrance animation
+// ===================================
+(function () {
+    var heroes = document.querySelectorAll('.section-hero');
+    if (!heroes.length) return;
+    var heroObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                heroObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05 });
+    heroes.forEach(function (el) { heroObs.observe(el); });
+})();
 
 // ===================================
 // Console Welcome Message

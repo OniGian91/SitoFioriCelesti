@@ -39,7 +39,14 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="index.html#progetti" class="active">Cosa Facciamo</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#progetti" class="active">Progetti <i class="fas fa-chevron-down nav-chevron"></i></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="gelateria.html"><i class="fas fa-ice-cream"></i> Gelateria</a></li>
+                                <li><a href="listaattivitacasalaboratorio.html"><i class="fas fa-hammer"></i> Casa Laboratorio</a></li>
+                                <li><a href="listaattivitadojozen.html"><i class="fas fa-spa"></i> Kuge Dojo Zen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.html#contatti">Contatti</a></li>
                         <li><a href="news.html">News</a></li>
                         <li class="mobile-only"><a href="volontariato.html">Volontariato</a></li>
@@ -69,16 +76,10 @@
                         <!-- Verrà popolato dinamicamente -->
                     </div>
                     
-                    <div class="cta-buttons">
-                        <a href="index.html#contatti" class="btn btn-primary">Contattaci</a>
-                        <a href="listaattivitacasalaboratorio.html" class="btn btn-secondary">Tutti i progetti</a>
-                    </div>
+                  
                 </div>
                 <div class="about-right">
-                    <!-- Mobile-only button -->
-                    <div class="mobile-activity-button">
-                        <a href="listaattivitacasalaboratorio.html" class="btn btn-secondary">Tutti i progetti</a>
-                    </div>
+                    
                     <!-- Carosello Foto Attività -->
                     <div class="carousel-container-about">
                         <div class="carousel-track-about" id="carousel-track">

@@ -28,7 +28,14 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                        <li><a href="index.html#progetti">Cosa Facciamo</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#progetti">Progetti <i class="fas fa-chevron-down nav-chevron"></i></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="gelateria.html"><i class="fas fa-ice-cream"></i> Gelateria</a></li>
+                                <li><a href="listaattivitacasalaboratorio.html"><i class="fas fa-hammer"></i> Casa Laboratorio</a></li>
+                                <li><a href="listaattivitadojozen.html"><i class="fas fa-spa"></i> Kuge Dojo Zen</a></li>
+                            </ul>
+                        </li>
                         <li><a href="index.html#contatti">Contatti</a></li>
                         <li><a href="news.html">News</a></li>
                         <li class="mobile-only"><a href="volontariato.html" class="active">Volontariato</a></li>
@@ -45,27 +52,27 @@
     </header>
 
     <!-- Volunteer Hero -->
-    <section class="about" id="home">
+    <section class="section-hero" id="home">
+        <div class="section-hero-bg">
+            <img src="imgs/home.jpg" alt="Diventa Volontario - Fiori Celesti APS">
+        </div>
+        <div class="section-hero-overlay"></div>
         <div class="container">
-            <div class="about-content-new">
-                <div class="about-left">
-                    <h2 class="main-title"><i class="fas fa-hands-helping"></i> Diventa Volontario</h2>
-                    <p class="activity-description">Unisciti a <strong>Fiori Celesti APS</strong> e contribuisci con il tuo tempo e le tue competenze ai nostri laboratori artigianali, alla gelateria e alle pratiche zen. Il volontariato è un'esperienza di <strong>crescita umana</strong> e di <strong>servizio alla comunità</strong>.</p>
-                    
-                    <div class="volunteer-benefits">
-                        <h3>Perché diventare volontario?</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> <strong>Crescita personale</strong> attraverso l'esperienza diretta</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Fare la differenza</strong> nella vita di altre persone</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Sviluppare competenze</strong> in ambito sociale e artigianale</li>
-                            <li><i class="fas fa-check-circle"></i> <strong>Essere parte di una comunità</strong> accogliente e solidale</li>
-                        </ul>
-                    </div>
+            <div class="section-hero-body">
+                <div class="section-hero-logo">
+                    <img src="imgs/logo.jpg" alt="Fiori Celesti APS Logo">
                 </div>
-                <div class="about-right">
-                    <div class="project-single-image" style="background: white; padding: 2rem; display: flex; align-items: center; justify-content: center;">
-                        <img src="imgs/logo.png" alt="Fiori Celesti APS">
-                    </div>
+                <div class="section-hero-text">
+                    <h2 class="section-hero-title">Diventa Volontario</h2>
+                    <div class="section-hero-line"></div>
+                    <p>Unisciti a <strong>Fiori Celesti APS</strong> e contribuisci con il tuo tempo e le tue competenze ai nostri laboratori artigianali, alla gelateria e alle pratiche zen. Il volontariato è un'esperienza di <strong>crescita umana</strong> e di <strong>servizio alla comunità</strong>.</p>
+                    <h3>Perché diventare volontario?</h3>
+                    <ul>
+                        <li><strong>Crescita personale</strong> attraverso l'esperienza diretta</li>
+                        <li><strong>Fare la differenza</strong> nella vita di altre persone</li>
+                        <li><strong>Sviluppare competenze</strong> in ambito sociale e artigianale</li>
+                        <li><strong>Essere parte di una comunità</strong> accogliente e solidale</li>
+                    </ul>
                 </div>
             </div>
         </div>
