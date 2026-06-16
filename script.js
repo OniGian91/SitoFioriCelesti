@@ -197,7 +197,7 @@ function createTeamGroups() {
     if (!teamCarousel || typeof teamMembersData === 'undefined') return;
 
     var isMobile = window.innerWidth <= 600;
-    var PER_PAGE = isMobile ? 2 : 4;
+    var PER_PAGE = isMobile ? 2 : 3;
     var INTERVAL_MS = 4000;
     var ANIM_MS = 650;
 
